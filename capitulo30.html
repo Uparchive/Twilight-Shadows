@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 30</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo30">
+        <h1 class="chapter-number">Capítulo 30</h1>
+        <h2 class="chapter-title">O Preço da Aliança</h2>
+        <p>
+            O retorno ao esconderijo dos vampiros foi marcado por um silêncio tenso. Embora Elias estivesse salvo, o grupo sabia que a missão havia revelado sua posição ao Conselho. Viktor os esperava na entrada, sua expressão séria.
+        </p>
+        <p>
+            “Vocês conseguiram,” ele disse, avaliando Elias com um olhar crítico. “Mas isso custará caro. O Conselho sabe que estamos nos mobilizando.” Ele cruzou os braços, seus olhos fixos em Sophie. “Espero que sua causa valha o risco.”
+        </p>
+        <p>
+            Sophie deu um passo à frente, sua determinação clara. “Cada passo que damos nos aproxima de derrotá-los. Mas precisamos estar unidos. Sozinhos, nenhum de nós tem chance.” Viktor a observou por um momento antes de acenar com a cabeça. “Muito bem. Considere nossa aliança oficial. Mas saiba que eu não tolero falhas.”
+        </p>
+        <p>
+            Lucas se aproximou de Sophie enquanto Viktor e seus seguidores se afastavam. “Você conseguiu,” ele disse, sua voz baixa, mas cheia de admiração. Sophie suspirou, sentindo o peso das últimas horas. “Foi só um pequeno avanço. Ainda há tanto a fazer.”
+        </p>
+        <p>
+            Naquela noite, o grupo se reuniu para planejar os próximos passos. Althea, que havia ficado no santuário, chegou com más notícias. “O Conselho está mobilizando forças para atacar uma vila próxima. Eles sabem que é um ponto estratégico para nossa resistência.”
+        </p>
+        <p>
+            “Precisamos protegê-los,” Sophie disse imediatamente. Viktor, porém, hesitou. “Salvar a vila pode nos expor ainda mais. Estamos prontos para sacrificar tudo por isso?” Sua pergunta pairou no ar, causando um silêncio desconfortável.
+        </p>
+        <p>
+            Sophie olhou para ele, sua voz firme. “Se começarmos a abandonar inocentes, estaremos perdendo o que nos torna diferentes deles. Eu vou. Quem quiser me acompanhar, será bem-vindo.” Lucas imediatamente se posicionou ao lado dela, seguido por Althea e alguns vampiros rebeldes.
+        </p>
+        <p>
+            A decisão foi tomada, mas o caminho à frente era perigoso. Enquanto preparavam suas armas e estratégias, Sophie sentiu o colar pulsar novamente, como se soubesse que algo significativo estava prestes a acontecer. Ela sabia que cada escolha, cada sacrifício, os aproximava do confronto final.
+        </p>
+        <p>
+            Enquanto a equipe partia para proteger a vila, Sophie olhou para o horizonte, determinada. O preço da aliança era alto, mas ela estava disposta a pagar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo29.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo31.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 31</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo31">
+        <h1 class="chapter-number">Capítulo 31</h1>
+        <h2 class="chapter-title">As Chamas da Vila</h2>
+        <p>
+            A vila estava mergulhada em uma calma inquietante quando Sophie e seu grupo chegaram. No entanto, a tensão no ar era palpável. As pessoas olhavam para eles com olhos cheios de medo e desconfiança.
+        </p>
+        <p>
+            “Eles sabem que o Conselho está vindo,” Althea disse, observando os moradores se reunirem em pequenos grupos. “Mas não sabem se podem confiar em nós.” Viktor, que decidira acompanhá-los com alguns de seus guerreiros, bufou. “Não temos tempo para conquistar corações. Precisamos preparar a defesa.”
+        </p>
+        <p>
+            Sophie ergueu a mão, interrompendo a discussão. “Eles precisam entender que estamos aqui para ajudá-los. Deixe-me falar com eles.” Sem esperar resposta, ela foi até o centro da vila, onde os aldeões haviam se reunido.
+        </p>
+        <p>
+            “Eu sei que estão com medo,” ela começou, sua voz clara e firme. “E sei que a ameaça do Conselho parece impossível de enfrentar. Mas estamos aqui porque acreditamos que ninguém deve enfrentar isso sozinho. Juntos, podemos resistir.”
+        </p>
+        <p>
+            Houve murmúrios entre os aldeões, mas um homem mais velho deu um passo à frente. “Por que deveríamos acreditar em você? Vocês podem simplesmente nos abandonar quando as coisas ficarem difíceis.” Sophie segurou o colar em seu pescoço, que brilhou suavemente. “Porque eu também sei o que é ter medo. Mas sei que a coragem vem quando lutamos pelo que é certo. E eu não vou abandoná-los.”
+        </p>
+        <p>
+            O silêncio caiu sobre a vila. Então, uma jovem deu um passo à frente, segurando a mão de uma criança. “Eu acredito nela,” disse, sua voz trêmula. Isso foi suficiente para quebrar a barreira de desconfiança. Logo, outros se ofereceram para ajudar a preparar a vila.
+        </p>
+        <p>
+            Enquanto o grupo organizava as defesas, Lucas se aproximou de Sophie. “Você tem um dom, sabia?” ele disse, um sorriso leve nos lábios. Sophie deu de ombros, exausta. “Eu só espero que seja o suficiente.”
+        </p>
+        <p>
+            Ao cair da noite, as primeiras chamas iluminaram o horizonte. O Conselho havia chegado, trazendo destruição com eles. Os defensores estavam prontos, mas o medo estava presente em todos os rostos.
+        </p>
+        <p>
+            “Hoje não lutamos apenas por esta vila,” Sophie gritou, sua voz ressoando como um trovão. “Lutamos por todos que não têm voz contra a tirania. E juntos, venceremos!” A luz do colar brilhou intensamente, inspirando os aldeões e fortalecendo os aliados.
+        </p>
+        <p>
+            Quando os primeiros inimigos atacaram, a vila tornou-se um campo de batalha. As chamas iluminavam a escuridão, e o som do combate ecoava na noite. Sophie sabia que aquela luta era apenas o início de algo muito maior.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo30.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo32.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 22</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo22">
+        <h1 class="chapter-number">Capítulo 22</h1>
+        <h2 class="chapter-title">A Cripta do Crepúsculo</h2>
+        <p>
+            A manhã chegou coberta por uma neblina densa enquanto Sophie, Lucas e Althea caminhavam em direção à Cripta do Crepúsculo. O local estava escondido em uma caverna profunda, cujas paredes eram marcadas por runas que pulsavam com uma luz fria.
+        </p>
+        <p>
+            “A Cripta reconhece apenas os dignos,” disse Althea, sua voz ecoando pela entrada escura. “Você será testada em corpo, mente e espírito. Nada pode ser escondido lá dentro.”
+        </p>
+        <p>
+            Sophie segurou o colar que pulsava suavemente contra sua pele. O calor familiar a acalmava, mas não aliviava completamente o peso que sentia. “Estou pronta,” ela disse, sua voz firme, mas com um leve tremor.
+        </p>
+        <p>
+            Lucas colocou uma mão em seu ombro. “Nós estaremos aqui, esperando. Confie em si mesma, Sophie.” Ela olhou para ele, sentindo uma onda de gratidão antes de dar o primeiro passo na escuridão.
+        </p>
+        <p>
+            Assim que entrou, o mundo ao seu redor mudou. A luz da entrada desapareceu, e Sophie se viu em um espaço vazio, com o chão coberto de névoa e o ar carregado de energia. Uma voz ecoou ao seu redor, baixa e sombria: “Você busca o Orbe da Eternidade, mas está preparada para o que ele exige?”
+        </p>
+        <p>
+            “Estou,” Sophie respondeu, tentando manter a calma. A névoa começou a se mover, formando imagens que pareciam fragmentos de memórias. Ela viu seus pais, momentos de sua infância e cenas que nunca havia presenciado antes — como se fossem memórias de outra vida.
+        </p>
+        <p>
+            De repente, uma figura emergiu da névoa, uma versão dela mesma, mas envolta em sombras. “Você é fraca,” a figura disse, sua voz carregada de desdém. “Nunca será capaz de carregar o fardo que escolheu.”
+        </p>
+        <p>
+            Sophie sentiu a dúvida crescer dentro dela, mas apertou o colar com força. “Eu já provei que posso enfrentar meus medos. Você não me assusta.” A figura riu, e a escuridão ao redor dela começou a se expandir, ameaçando engolir tudo.
+        </p>
+        <p>
+            Sophie fechou os olhos e deixou o colar guiá-la. Uma luz suave começou a emanar do pingente, iluminando o espaço. Quando abriu os olhos novamente, a figura sombria havia desaparecido, substituída por um pedestal com um orbe brilhante.
+        </p>
+        <p>
+            Ela se aproximou lentamente, sentindo a energia do Orbe da Eternidade chamá-la. Assim que tocou o artefato, uma visão a atingiu com força. Ela viu o Conselho das Sombras, figuras encapuzadas conspirando, e um exército que marchava sob a bandeira deles. Mas também viu uma luz — uma esperança, pequena, mas poderosa.
+        </p>
+        <p>
+            Quando voltou a si, estava novamente na entrada da Cripta. Althea e Lucas estavam esperando, e a preocupação em seus rostos se transformou em alívio ao vê-la. “Você conseguiu,” Althea disse, observando o Orbe em suas mãos.
+        </p>
+        <p>
+            Sophie assentiu, mas sua expressão era séria. “Eu vi o que está por vir. Eles estão se preparando, e precisamos fazer o mesmo.” Lucas apertou sua mão, sua determinação refletindo a dela. “Estamos juntos nisso, Sophie. Não importa o que venha.”
+        </p>
+        <p>
+            Enquanto eles deixavam a Cripta, Sophie sabia que o Orbe era apenas o início de algo muito maior. O verdadeiro desafio estava apenas começando.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo21.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo23.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

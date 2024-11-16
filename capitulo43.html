@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 43</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo43">
+        <h1 class="chapter-number">Capítulo 43</h1>
+        <h2 class="chapter-title">A Aliança Fraturada</h2>
+        <p>
+            A saída da caverna foi marcada por um silêncio desconfortável. Sophie segurava o Fragmento da Eternidade, seu brilho pulsante refletindo a inquietação nos rostos de seus aliados. Lucas caminhava ao lado dela, enquanto Viktor mantinha uma distância cuidadosa.
+        </p>
+        <p>
+            “Isso foi poder demais,” Viktor finalmente quebrou o silêncio. “Você viu o que aconteceu lá dentro. O Fragmento é perigoso, e agora está com ela.” Althea virou-se, encarando Viktor com um olhar severo. “Sem o Fragmento, não temos chance contra o Conselho. Você prefere que eles o controlem?” 
+        </p>
+        <p>
+            Viktor bufou, cruzando os braços. “Não prefiro nada, mas confiar algo tão destrutivo a uma pessoa só... Isso não parece sábio.” Lucas, com o rosto endurecido, respondeu: “Sophie é a única que conseguiu usar o Fragmento sem ser consumida. Você viu isso. Questione qualquer coisa, menos a coragem dela.” 
+        </p>
+        <p>
+            Sophie interrompeu, sua voz calma, mas firme. “Isso não é sobre mim. Nem sobre quem carrega o Fragmento. É sobre todos nós. Se não confiarmos uns nos outros, já estamos derrotados.” Viktor olhou para ela por um longo momento antes de desviar o olhar. “Apenas lembre-se: confiança é uma via de mão dupla.” 
+        </p>
+        <p>
+            Quando o grupo chegou ao acampamento temporário, descobriram uma nova ameaça: espiões do Conselho haviam seguido seus passos. Um dos aldeões que ajudavam na resistência correu até Sophie. “Eles estão reunindo forças nas colinas próximas,” ele disse, ofegante. “Estão esperando a oportunidade de atacar.” 
+        </p>
+        <p>
+            “Eles não perderam tempo,” Althea comentou, já preparando feitiços defensivos. Viktor, porém, parecia pensativo. “Eles sabem que estamos divididos. É isso que eles querem explorar.” Sophie olhou para os aliados, sua determinação clara. “Então não vamos dar a eles essa vantagem.” 
+        </p>
+        <p>
+            Durante a reunião para planejar a defesa, as tensões continuaram a crescer. Viktor sugeriu uma abordagem mais agressiva, enquanto Althea e Lucas preferiam reforçar as defesas e esperar pelo ataque. Sophie foi forçada a tomar uma decisão difícil. “Não podemos nos arriscar a perder tudo em um ataque precipitado. Vamos consolidar nossas forças aqui e preparar o terreno para contra-atacar quando for seguro.” 
+        </p>
+        <p>
+            Viktor não ficou satisfeito, mas aceitou a decisão relutantemente. “Espero que você saiba o que está fazendo.” Sophie sentiu o peso de suas palavras, mas manteve-se firme. “Eu sei.” 
+        </p>
+        <p>
+            Naquela noite, enquanto o acampamento se preparava para o inevitável confronto, Sophie refletiu sobre o custo da liderança. As divisões no grupo eram claras, mas ela também sabia que a única maneira de vencer seria manter todos unidos. O Fragmento em suas mãos parecia mais leve agora, como se entendesse sua determinação.
+        </p>
+        <p>
+            “Você está pronta para isso?” Lucas perguntou, sentando-se ao lado dela. Sophie olhou para ele, seu olhar resoluto. “Não sei se alguém está pronto para algo assim. Mas estou decidida.” Ele assentiu, tocando sua mão. “Então estamos prontos.” 
+        </p>
+        <p>
+            Enquanto o amanhecer se aproximava, Sophie sabia que o próximo dia traria mais desafios. A batalha que se aproximava seria decisiva, mas a verdadeira luta seria pela confiança que sustentava sua aliança. O futuro dependia disso.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo42.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo44.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 49</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo49">
+        <h1 class="chapter-number">Capítulo 49</h1>
+        <h2 class="chapter-title">O Fim da Escuridão</h2>
+        <p>
+            Ao amanhecer, o acampamento estava em silêncio, cada membro da resistência focado nos últimos preparativos. Sophie sentia o peso do Fragmento em suas mãos, pulsando com uma intensidade que parecia sincronizar com seu coração. A hora havia chegado.
+        </p>
+        <p>
+            “O Conselho já está em movimento,” Althea disse, observando um mapa mágico que mostrava as forças inimigas se aproximando rapidamente. “Eles sabem sobre o ritual e farão tudo para nos deter.” Viktor colocou sua espada na bainha, pronto para liderar os defensores. “Então vamos enfrentá-los com tudo o que temos.” 
+        </p>
+        <p>
+            Sophie olhou para Lucas, cujos olhos estavam fixos nela. “Lembre-se, não importa o que aconteça, isso é maior que qualquer um de nós,” ela disse. Lucas segurou sua mão, sua voz firme. “Mas isso não significa que você precisa carregar tudo sozinha. Nós estamos com você.” 
+        </p>
+        <p>
+            O ritual começou em um círculo mágico construído no coração do vale. Althea entoava palavras antigas, enquanto Sophie posicionava o Fragmento no centro, seu brilho crescendo até iluminar o campo inteiro. Os ventos começaram a soprar com força, e uma aura de poder envolveu o local.
+        </p>
+        <p>
+            As forças do Conselho chegaram, lideradas por Caelan, cuja presença era mais ameaçadora do que nunca. “Vocês realmente pensaram que poderiam mudar o equilíbrio sem pagar o preço?” ele gritou, avançando com seus soldados. Viktor liderou o contra-ataque, enquanto Lucas e os outros formavam um escudo ao redor de Sophie e Althea.
+        </p>
+        <p>
+            A batalha foi intensa, uma colisão de luz e sombras que abalava o chão. Sophie permaneceu concentrada, sentindo o Fragmento canalizar a energia ao seu redor. Cada palavra do ritual parecia puxar mais de sua força, mas ela não desistiu.
+        </p>
+        <p>
+            “Isso não vai funcionar,” Caelan gritou, lançando um ataque direto a Sophie. Lucas interceptou, sua espada cruzando com a lança de sombras de Caelan. “Você não vai tocá-la,” ele disse, segurando o ataque com toda a sua força.
+        </p>
+        <p>
+            Com um grito final, Althea concluiu o ritual. O Fragmento brilhou intensamente, e uma onda de energia varreu o campo de batalha, desintegrando as forças sombrias e forçando Caelan a recuar. O céu clareou, e por um momento, tudo ficou em silêncio.
+        </p>
+        <p>
+            Sophie caiu de joelhos, exausta, enquanto o Fragmento pairava no ar, agora estabilizado. “É isso,” Althea disse, sua voz cheia de reverência. “O equilíbrio foi restaurado.” Lucas correu até Sophie, segurando-a enquanto ela lutava para recuperar o fôlego. “Você conseguiu,” ele disse, com um sorriso de alívio.
+        </p>
+        <p>
+            Viktor observava o campo vazio, onde as sombras haviam desaparecido. “Isso acabou?” ele perguntou, ainda em alerta. Althea respondeu com um sorriso cansado. “Por enquanto. Mas o equilíbrio é algo que deve ser constantemente mantido.” 
+        </p>
+        <p>
+            Sophie olhou para o Fragmento, agora brilhando de forma tranquila. “Nós conseguimos, juntos. Mas essa não é apenas a nossa vitória. É de todos que lutaram por um futuro melhor.” 
+        </p>
+        <p>
+            Enquanto o sol nascia, o grupo reuniu-se para contemplar o que haviam conquistado. A batalha estava vencida, mas Sophie sabia que sua jornada ainda não havia terminado. O equilíbrio era uma responsabilidade que todos carregavam, e ela estava pronta para enfrentar o que viesse a seguir.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo48.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo50.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

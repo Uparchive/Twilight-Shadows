@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 23</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo23">
+        <h1 class="chapter-number">Capítulo 23</h1>
+        <h2 class="chapter-title">O Eco das Sombras</h2>
+        <p>
+            O grupo avançava pela trilha sinuosa que levava de volta à segurança do santuário. O Orbe da Eternidade estava firmemente seguro nas mãos de Sophie, mas sua mente ainda estava repleta das visões que ele revelara.
+        </p>
+        <p>
+            “O que exatamente você viu?” Lucas perguntou enquanto caminhava ao lado dela. Sophie hesitou antes de responder. “Eu vi o Conselho reunindo forças. Um exército inteiro, Lucas. Eles estão prontos para atacar.”
+        </p>
+        <p>
+            Althea, que liderava o grupo, parou de repente, virando-se para encará-los. “O Orbe mostra possibilidades, não certezas. Mas, se essa visão for verdade, precisamos agir rápido.” Sua expressão era grave, mas decidida. “Nosso próximo passo deve ser encontrar os outros artefatos. Apenas juntos eles podem conter a força do Conselho.”
+        </p>
+        <p>
+            Enquanto conversavam, Sophie sentiu uma presença estranha ao seu redor. Era como se sombras invisíveis os estivessem seguindo, observando cada movimento. “Alguém está aqui,” ela sussurrou, segurando o colar instintivamente.
+        </p>
+        <p>
+            Lucas puxou sua espada, seus olhos brilhando com determinação. “Mostrem-se!” ele gritou para o vazio da floresta. Por um momento, tudo permaneceu em silêncio. Mas então, figuras emergiram das sombras — encapuzados, com olhos brilhando em vermelho.
+        </p>
+        <p>
+            “Os ecos das sombras,” murmurou Althea, assumindo uma posição defensiva. “Eles são emissários do Conselho, enviados para eliminar ameaças antes que cresçam.”
+        </p>
+        <p>
+            As figuras atacaram, movendo-se com velocidade sobrenatural. Sophie reagiu instintivamente, ativando o poder do colar. Um campo de luz emanou dela, empurrando os atacantes para trás. Lucas e Althea lutaram ao lado dela, enfrentando os ecos com habilidade e força.
+        </p>
+        <p>
+            Um dos atacantes conseguiu passar pela barreira e avançou diretamente para Sophie. Ela sentiu o medo subir, mas lembrou-se das palavras de Lucas e Althea. Focando toda a sua energia, ela lançou um feixe de luz que desintegrou a criatura.
+        </p>
+        <p>
+            Quando o último dos ecos foi derrotado, o grupo parou para recuperar o fôlego. “Eles sabem que estamos nos movendo,” disse Althea. “Precisamos ser mais rápidos. O Conselho não vai parar por nada.”
+        </p>
+        <p>
+            Sophie olhou para o Orbe em suas mãos, sentindo o peso de sua responsabilidade. “Não importa o que venha, nós vamos enfrentá-los. Juntos.” Lucas assentiu, colocando uma mão no ombro dela. “E nós não vamos falhar.”
+        </p>
+        <p>
+            A floresta ficou silenciosa novamente, mas Sophie sabia que aquela paz era temporária. Os ecos das sombras eram apenas o começo. O verdadeiro confronto ainda estava por vir.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo22.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo24.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

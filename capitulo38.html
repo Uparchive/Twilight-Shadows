@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 38</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo38">
+        <h1 class="chapter-number">Capítulo 38</h1>
+        <h2 class="chapter-title">O Olho da Tempestade</h2>
+        <p>
+            A tempestade era como nada que Sophie havia visto antes. Raios cortavam o céu com uma frequência assustadora, e o vento uivava como se estivesse vivo. Cada passo do grupo em direção à fortaleza do Conselho era uma batalha contra a natureza.
+        </p>
+        <p>
+            “Isso não é natural,” Althea disse, sua voz quase engolida pelo vento. “Eles estão usando magia para nos deter.” Viktor, que liderava o grupo, virou-se para Sophie. “Se isso é magia deles, você pode usar o colar para contra-atacar?”
+        </p>
+        <p>
+            Sophie segurou o colar, sentindo a energia pulsar dentro dele. “Eu posso tentar, mas não sei quanto tempo posso manter isso.” Lucas colocou uma mão em seu ombro. “Você não está sozinha. Nós estamos com você.”
+        </p>
+        <p>
+            Concentrando-se, Sophie fechou os olhos e deixou o colar brilhar intensamente. Uma bolha de luz se formou ao redor do grupo, protegendo-os temporariamente da fúria da tempestade. “Vamos rápido,” ela disse, sua voz tensa pelo esforço.
+        </p>
+        <p>
+            Eles avançaram sob a proteção de Sophie, mas a magia exigia um custo. Cada passo parecia drenar mais de sua energia. Quando finalmente avistaram a fortaleza, a tempestade parecia se intensificar, como se tentasse impedir sua entrada.
+        </p>
+        <p>
+            Viktor deu um passo à frente, puxando sua espada. “Eles sabem que estamos aqui. Não há mais como recuar.” Althea começou a entoar feitiços de proteção enquanto Lucas organizava os rebeldes para o confronto iminente.
+        </p>
+        <p>
+            Quando chegaram aos portões da fortaleza, eles se abriram lentamente, revelando uma figura encapuzada. Sua voz era como um trovão. “Vocês ousam desafiar o Conselho? Este será seu fim.” Sophie sentiu o colar vibrar em resposta, como se reconhecesse o inimigo.
+        </p>
+        <p>
+            “Este é apenas o começo,” Sophie respondeu, sua voz firme apesar do cansaço. A luz do colar brilhou mais uma vez, e ela sabia que o confronto final estava mais próximo do que nunca.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo37.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo39.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

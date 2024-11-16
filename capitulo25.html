@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo25">
+        <h1 class="chapter-number">Capítulo 25</h1>
+        <h2 class="chapter-title">O Peso da Escolha</h2>
+        <p>
+            O caminho de volta ao santuário era carregado de silêncio, mas não de paz. Sophie segurava a esfera que havia retirado do Abismo, sentindo o peso não apenas físico, mas também emocional que ela carregava. Cada passo parecia mais difícil, como se o artefato estivesse drenando sua energia.
+        </p>
+        <p>
+            Lucas observava Sophie atentamente, sua preocupação evidente. “Você parece exausta,” ele disse, aproximando-se dela. Sophie balançou a cabeça, forçando um pequeno sorriso. “Estou bem. Só preciso de um momento para respirar.”
+        </p>
+        <p>
+            Althea, que liderava o grupo, parou subitamente e se virou para encará-los. “O artefato está testando você, Sophie,” ela explicou. “Cada um deles carrega não apenas poder, mas também um fardo. Ele busca entender se você é digna de seu uso.”
+        </p>
+        <p>
+            “E se eu não for?” Sophie perguntou, sua voz baixa. Althea a olhou com seriedade. “Então ele consumirá você. Mas pelo que vi até agora, Sophie, você é mais forte do que acredita.”
+        </p>
+        <p>
+            Enquanto continuavam a jornada, Sophie começou a sentir as vozes do artefato em sua mente. Elas não eram palavras claras, mas emoções — fragmentos de memórias e escolhas impossíveis. Ela viu vislumbres de batalhas, de perdas, e de pessoas sendo forçadas a escolher entre o que amavam e o que era certo.
+        </p>
+        <p>
+            Quando chegaram ao santuário, Sophie estava visivelmente esgotada. Lucas insistiu para que ela descansasse, mas Sophie sabia que precisava entender o artefato antes de seguir em frente. “Eu preciso ficar sozinha,” ela disse a ele, entrando na sala principal do santuário.
+        </p>
+        <p>
+            Sentando-se no centro do salão, Sophie colocou a esfera diante de si e fechou os olhos. Ela deixou sua mente se abrir para o artefato, permitindo que ele mostrasse o que queria. Uma visão se formou, clara e intensa.
+        </p>
+        <p>
+            Ela estava em um campo de batalha. Lucas estava ao seu lado, lutando ferozmente contra as forças do Conselho das Sombras. Mas então, Sophie viu uma escolha terrível diante dela: usar o poder do artefato para salvar Lucas, sacrificando dezenas de vidas, ou usá-lo para proteger os inocentes, deixando Lucas vulnerável.
+        </p>
+        <p>
+            As lágrimas corriam por seu rosto enquanto a visão desaparecia. Quando abriu os olhos, Lucas estava lá, parado na porta. “Sophie, o que aconteceu?” ele perguntou, aproximando-se.
+        </p>
+        <p>
+            Sophie olhou para ele, sentindo o peso da escolha que ainda não tinha feito, mas sabia que poderia enfrentar. “Eu vi algo... algo que pode acontecer. Eu vou precisar escolher, Lucas. E não sei se conseguirei.”
+        </p>
+        <p>
+            Lucas segurou as mãos dela, sua expressão cheia de determinação. “Você não precisa carregar isso sozinha. Nós estamos juntos, não importa o que aconteça.”
+        </p>
+        <p>
+            Sophie assentiu, sentindo um pouco do peso diminuir. Mas no fundo, ela sabia que a verdadeira prova ainda estava por vir. E quando o momento chegasse, ela precisaria encontrar uma força que nunca soube que possuía.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo24.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo26.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

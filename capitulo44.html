@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 44</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo44">
+        <h1 class="chapter-number">Capítulo 44</h1>
+        <h2 class="chapter-title">Sob o Cerco das Sombras</h2>
+        <p>
+            A alvorada trouxe um silêncio estranho ao acampamento. O céu estava encoberto por nuvens pesadas, e o ar parecia vibrar com a promessa de batalha iminente. Sophie estava no centro do acampamento, observando seus aliados se prepararem.
+        </p>
+        <p>
+            “Eles estão vindo,” Althea anunciou, terminando um feitiço de proteção que envolveu o perímetro. “As forças do Conselho estão se movendo rápido. Temos horas, talvez menos.” Viktor, ao seu lado, ajustou a armadura e olhou para o horizonte. “Eles estão testando nossa paciência, mas nós estamos prontos.”
+        </p>
+        <p>
+            Lucas aproximou-se de Sophie, sua espada já em punho. “Você fez a escolha certa ontem. Consolidar nossas forças foi a melhor decisão. Agora, vamos mostrar a eles o que somos capazes.” Sophie assentiu, sentindo a determinação crescer dentro de si. “Isso não é apenas sobre sobreviver. É sobre lutar por algo maior que nós mesmos.”
+        </p>
+        <p>
+            Quando as forças do Conselho apareceram na linha do horizonte, o acampamento entrou em alerta total. As sombras avançavam como uma onda, soldados envoltos em escuridão liderados por Caelan, cuja presença era inconfundível.
+        </p>
+        <p>
+            “Sophie!” ele gritou, sua voz ressoando como um trovão. “Você e seus aliados não têm chance. Entregue o Fragmento, e talvez poupemos aqueles que seguem você.” Sophie deu um passo à frente, o Fragmento da Eternidade brilhando em sua mão. “Você não entende o que está enfrentando, Caelan. Este poder não pertence ao Conselho. Ele pertence ao equilíbrio, e nós não vamos ceder.”
+        </p>
+        <p>
+            Com um movimento de sua mão, Caelan ordenou o ataque. As sombras avançaram, encontrando a resistência feroz dos rebeldes e aldeões. Viktor liderava a linha de frente, sua espada cortando os inimigos com precisão letal. Althea conjurava feitiços que iluminavam a escuridão, repelindo os atacantes.
+        </p>
+        <p>
+            Sophie estava no centro da batalha, o Fragmento brilhando intensamente. Cada vez que ela o usava, uma onda de luz varria o campo, dissipando as sombras e inspirando seus aliados. Mas ela sentia o custo. O Fragmento exigia dela não apenas energia, mas também força de vontade.
+        </p>
+        <p>
+            “Cuidado!” Lucas gritou, bloqueando um ataque que quase atingiu Sophie. Ela respondeu com uma explosão de luz, eliminando o inimigo. “Obrigada,” ela disse, ofegante. “Eu não posso perder o foco agora.” Lucas sorriu, apesar do caos. “Estamos juntos nisso.”
+        </p>
+        <p>
+            No ápice da batalha, Caelan avançou diretamente em direção a Sophie, sua lança de sombras brilhando com uma energia maligna. “Você acha que pode mudar o destino com sua teimosia?” ele disse, atacando com ferocidade. Sophie ergueu o Fragmento, bloqueando o golpe e criando uma explosão de energia que fez ambos recuarem.
+        </p>
+        <p>
+            “O destino é construído por nossas escolhas,” Sophie respondeu, reunindo toda a força que tinha. O Fragmento brilhou mais uma vez, emitindo uma onda de luz tão poderosa que paralisou o exército do Conselho por um instante.
+        </p>
+        <p>
+            Aproveitando a oportunidade, Viktor liderou um contra-ataque que empurrou os inimigos para trás. Althea lançou um feitiço final que selou o campo, forçando o Conselho a recuar temporariamente. Quando o silêncio voltou, o campo estava coberto de sinais da batalha, mas o acampamento permanecia de pé.
+        </p>
+        <p>
+            Sophie caiu de joelhos, exausta, enquanto Lucas corria para ajudá-la. “Você fez isso,” ele disse, segurando-a com cuidado. “Não sozinha,” ela respondeu, olhando para seus aliados que se levantavam ao redor dela. “Nós fizemos isso juntos.”
+        </p>
+        <p>
+            Enquanto o grupo se reunia para se recuperar, Sophie sabia que essa vitória era apenas o começo. O Conselho voltaria, e o Fragmento estava se tornando uma arma e um fardo cada vez mais pesado. Mas por agora, ela permitiu-se um momento de esperança.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo43.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo45.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

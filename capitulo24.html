@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 24</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo24">
+        <h1 class="chapter-number">Capítulo 24</h1>
+        <h2 class="chapter-title">O Chamado do Abismo</h2>
+        <p>
+            O grupo avançava pela floresta, agora mais rápido e cauteloso após o ataque dos ecos das sombras. A energia ao redor parecia mais pesada, como se algo maior estivesse observando a cada passo.
+        </p>
+        <p>
+            “Estamos próximos do Abismo,” Althea disse, sua voz carregada de preocupação. “É onde o próximo artefato está escondido. Mas o Abismo não é um lugar comum. Ele testa sua sanidade e coragem de maneiras que você não pode prever.”
+        </p>
+        <p>
+            Sophie apertou o colar em seu pescoço, sentindo o calor reconfortante que ele emanava. “O que exatamente é o Abismo?” ela perguntou, tentando esconder o medo que crescia dentro dela.
+        </p>
+        <p>
+            Althea parou e olhou para Sophie. “O Abismo é uma fenda entre os mundos, um lugar onde os ecos do passado e do futuro colidem. Ele se alimenta de suas dúvidas, medos e arrependimentos. Apenas aqueles que aceitam quem são conseguem sair de lá.”
+        </p>
+        <p>
+            Lucas se aproximou de Sophie, colocando uma mão no ombro dela. “Você não precisa fazer isso sozinha,” ele disse, sua voz firme. Sophie sorriu levemente. “Eu sei. Mas há coisas que eu preciso enfrentar por mim mesma.”
+        </p>
+        <p>
+            Quando chegaram ao Abismo, Sophie ficou sem palavras. Era uma enorme fenda no solo, de onde emanava uma luz pulsante que mudava de cor. O ar ao redor parecia vibrar, e um zumbido baixo preenchia os ouvidos de todos.
+        </p>
+        <p>
+            “O artefato está no fundo,” Althea explicou, apontando para a fenda. “Mas apenas Sophie pode entrar. O Abismo escolhe quem permite passar, e seu teste será único para ela.”
+        </p>
+        <p>
+            Sophie respirou fundo antes de se aproximar da borda. “Eu vou voltar,” ela disse, olhando para Lucas e Althea. “Prometo.” Sem esperar por uma resposta, ela deu o primeiro passo e foi envolvida pela luz do Abismo.
+        </p>
+        <p>
+            Assim que entrou, Sophie foi consumida por uma escuridão densa. Sons de sussurros e risadas ecoavam ao seu redor. “Você não é forte o suficiente,” uma voz familiar disse. “Você vai falhar, assim como todos antes de você.”
+        </p>
+        <p>
+            Sophie fechou os olhos e se concentrou no colar. A luz dele começou a brilhar, afastando a escuridão ao seu redor. Quando abriu os olhos, estava em um campo vazio, onde uma figura encapuzada a esperava.
+        </p>
+        <p>
+            “Quem é você?” Sophie perguntou, sua voz ecoando pelo espaço. A figura removeu o capuz, revelando seu próprio rosto. “Eu sou você,” disse a figura. “A versão de você que teme falhar. A versão que carrega o peso do passado e o medo do futuro.”
+        </p>
+        <p>
+            Sophie sentiu as lágrimas brotarem, mas não recuou. “Eu não vou fugir,” ela disse. “Eu aceito quem eu sou. Com medo, com falhas, mas também com força e determinação.” A figura sorriu antes de desaparecer, deixando para trás uma esfera brilhante.
+        </p>
+        <p>
+            Sophie pegou a esfera, sentindo uma onda de energia percorrer seu corpo. A luz do Abismo a envolveu novamente, e ela emergiu na superfície, onde Lucas e Althea a esperavam.
+        </p>
+        <p>
+            “Você conseguiu,” Althea disse, visivelmente aliviada. Sophie segurou a esfera com força. “Foi só o começo,” ela respondeu. “O verdadeiro desafio ainda está por vir.”
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo23.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo25.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

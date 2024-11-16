@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 28</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo28">
+        <h1 class="chapter-number">Capítulo 28</h1>
+        <h2 class="chapter-title">O Jogo de Confianças</h2>
+        <p>
+            Após a aliança inicial com Viktor, o líder dos vampiros rebeldes, o grupo retornou ao esconderijo dos rebeldes para elaborar estratégias. Sophie, Lucas e Marcus estavam cercados por vampiros que ainda olhavam com desconfiança para os humanos.
+        </p>
+        <p>
+            “Se vamos trabalhar juntos, precisamos de regras claras,” Viktor começou, sua voz ecoando no salão. “Minha prioridade é proteger meu povo. Não arriscaremos nossas vidas por uma causa que não seja garantida.”
+        </p>
+        <p>
+            Sophie ergueu a cabeça, seu tom firme. “Entendo suas preocupações, mas também precisamos de vocês. O Conselho não poupará ninguém. Unidos, temos uma chance. Divididos, estamos condenados.” Seus olhos brilharam com determinação, e o colar em seu pescoço pulsou levemente, como se reforçasse suas palavras.
+        </p>
+        <p>
+            Viktor observou-a por um momento antes de assentir. “Muito bem, garota. Mas há uma questão que ainda preciso resolver antes de confiar em você completamente.” Ele fez um gesto, e um vampiro de olhar feroz aproximou-se. “Darius aqui acredita que vocês podem ser espiões do Conselho.”
+        </p>
+        <p>
+            Lucas deu um passo à frente, colocando-se entre Sophie e o vampiro. “Nós viemos até aqui arriscando nossas vidas. Não somos espiões.” Viktor ergueu a mão para silenciá-lo. “Talvez não sejam. Mas não posso ignorar as suspeitas.”
+        </p>
+        <p>
+            Sophie respirou fundo. “Como podemos provar que somos aliados?” Viktor inclinou-se, um sorriso sombrio curvando seus lábios. “Há uma missão. Um dos nossos foi capturado pelo Conselho. Se conseguirem trazê-lo de volta, terão provado seu valor.”
+        </p>
+        <p>
+            Lucas imediatamente se opôs. “Isso é suicídio! Entrar em território do Conselho é quase impossível sem ser detectado.” Viktor cruzou os braços. “Então talvez vocês não sejam os aliados que precisamos.”
+        </p>
+        <p>
+            Sophie colocou uma mão no braço de Lucas, pedindo silêncio. “Nós vamos,” ela disse com firmeza. “Diga-nos onde ele está.” Viktor pareceu satisfeito, entregando um mapa que marcava uma fortaleza nos arredores de uma cidade próxima. “Tragam-no de volta vivo, ou não há acordo.”
+        </p>
+        <p>
+            Enquanto se preparavam para a missão, Lucas confrontou Sophie em particular. “Você não precisa fazer isso, Sophie. Eles estão testando você de forma injusta.” Ela olhou para ele, determinada. “Se quisermos vencer, precisamos deles. E se isso significa provar nossa lealdade, então farei o que for necessário.”
+        </p>
+        <p>
+            Lucas suspirou, finalmente cedendo. “Se vamos fazer isso, faremos juntos.” Sophie sorriu levemente. “Sempre juntos.” Com isso, partiram para o território do Conselho, conscientes de que cada passo os colocava mais perto do perigo.
+        </p>
+        <p>
+            A tensão entre as duas facções era palpável, mas Sophie sabia que essa aliança, por mais frágil que fosse, era crucial para o futuro de todos. E, com isso, o jogo de confianças começava.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo27.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo29.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

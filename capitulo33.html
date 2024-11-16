@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 33</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo33">
+        <h1 class="chapter-number">Capítulo 33</h1>
+        <h2 class="chapter-title">A Trégua Roubada</h2>
+        <p>
+            O dia seguinte trouxe um silêncio estranho para a vila. As chamas haviam sido apagadas, e os corpos dos caídos foram enterrados com respeito. No entanto, a atmosfera estava carregada de tensão. Todos sabiam que o Conselho voltaria, mais forte e preparado.
+        </p>
+        <p>
+            Sophie, exausta, estava sentada no centro da vila, observando os aldeões repararem os danos. Lucas aproximou-se, trazendo água para ela. “Você precisa descansar,” ele disse, sentando-se ao seu lado. Sophie balançou a cabeça. “Não posso. Cada segundo importa agora. Eles não vão nos dar trégua.”
+        </p>
+        <p>
+            Viktor aproximou-se, sua presença imponente atraindo olhares cautelosos dos aldeões. “Você provou ser mais do que apenas palavras,” ele disse, cruzando os braços. “Mas sua luz não será suficiente para derrotá-los. Precisamos de um plano melhor.”
+        </p>
+        <p>
+            Sophie assentiu. “Eu sei. Mas não podemos fazer isso sozinhos. Precisamos de mais aliados.” Viktor franziu a testa. “Mais aliados? Você sabe como isso soa? Ninguém ousa enfrentar o Conselho. A maioria prefere a submissão à aniquilação.”
+        </p>
+        <p>
+            Althea, que estava ouvindo, interveio. “Há rumores de um antigo clã, escondido além das Montanhas Gélidas. Eles têm segredos que poderiam mudar o rumo da guerra. Mas ninguém sabe se ainda estão vivos.” Sophie olhou para ela, sua determinação crescendo. “Então precisamos encontrá-los.”
+        </p>
+        <p>
+            Antes que pudessem discutir mais, um mensageiro apareceu, seu rosto pálido de medo. “Uma mensagem do Conselho,” ele anunciou, entregando um pergaminho a Sophie. Ela leu em voz alta: “Vocês provaram ser mais persistentes do que esperávamos. Em honra a isso, oferecemos uma trégua. Enviem seus representantes para negociar.”
+        </p>
+        <p>
+            Viktor riu amargamente. “Uma trégua? Eles só querem ganhar tempo para reunir forças.” Sophie concordou, mas algo no tom da mensagem a incomodava. “Mesmo assim, precisamos ouvir o que têm a dizer. Se for uma armadilha, saberemos.” 
+        </p>
+        <p>
+            Lucas protestou. “É perigoso demais. Você não pode ir.” Sophie o encarou, sua expressão resoluta. “Eu tenho que ir. Eles querem me impedir. Isso significa que estou no caminho certo.”
+        </p>
+        <p>
+            O grupo começou a se preparar para o encontro, sabendo que cada passo era arriscado. Sophie sentiu o colar pulsar em seu peito, como se reagisse à incerteza que crescia dentro dela. Mesmo assim, ela sabia que não podia recuar. A resistência precisava dela mais do que nunca.
+        </p>
+        <p>
+            Enquanto o sol se punha, Sophie olhou para o horizonte, sua mente dividida entre esperança e medo. A trégua oferecida pelo Conselho era uma jogada perigosa, mas ela estava pronta para enfrentá-los, não importa o custo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo32.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo34.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

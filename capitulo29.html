@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 29</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo29">
+        <h1 class="chapter-number">Capítulo 29</h1>
+        <h2 class="chapter-title">Entre As Garras do Conselho</h2>
+        <p>
+            O ar estava pesado enquanto Sophie, Lucas e Marcus se aproximavam da fortaleza marcada no mapa. O local era uma construção antiga, com torres imponentes e cercada por uma densa floresta que parecia viva, movendo-se à medida que o vento soprava.
+        </p>
+        <p>
+            “É aqui,” Marcus sussurrou, olhando para a fortaleza com uma expressão séria. “O prisioneiro deve estar na torre central. Mas a fortaleza está repleta de guardas. Precisamos ser rápidos e silenciosos.”
+        </p>
+        <p>
+            Lucas avaliou o ambiente, buscando rotas alternativas. “Há uma passagem subterrânea?” ele perguntou, mas Marcus balançou a cabeça. “Eles reforçaram todas as entradas. Nossa melhor chance é distraí-los enquanto Sophie entra.” 
+        </p>
+        <p>
+            Sophie franziu a testa. “Vocês não podem enfrentar todos eles sozinhos. É muito arriscado.” Lucas segurou seu braço suavemente, seus olhos encontrando os dela. “Você precisa encontrar o prisioneiro. Nós lidaremos com os guardas.” 
+        </p>
+        <p>
+            Relutante, Sophie concordou. Com Marcus e Lucas criando uma distração na entrada principal, ela se esgueirou pelas sombras até uma janela lateral, que estava levemente aberta. Com esforço, conseguiu entrar na fortaleza, onde o silêncio era perturbador.
+        </p>
+        <p>
+            Os corredores estavam escuros e frios, e Sophie sentia o colar pulsar levemente, como se estivesse guiando seus passos. Ao chegar à torre central, ela ouviu vozes — guardas discutindo sobre o prisioneiro.
+        </p>
+        <p>
+            “Ele não vai durar muito tempo,” uma das vozes disse. “O Conselho não precisa de fracos. Só quer saber quem enviou ele.” Sophie prendeu a respiração, esperando que os guardas saíssem. Assim que ficaram fora de vista, ela se moveu rapidamente em direção à cela.
+        </p>
+        <p>
+            Dentro, encontrou um vampiro ferido, acorrentado à parede. Seus olhos brilhavam com uma determinação que nem mesmo o cativeiro parecia apagar. “Você é o enviado de Viktor?” ele perguntou, sua voz rouca. Sophie assentiu. “Vim para tirá-lo daqui. Consegue andar?”
+        </p>
+        <p>
+            O prisioneiro, cujo nome era Elias, tentou se levantar, mas suas pernas estavam fracas. Sophie usou o colar para emitir uma luz suave, restaurando parte de sua força. “Ainda assim, precisamos ser rápidos,” ela disse, ajudando-o a ficar de pé.
+        </p>
+        <p>
+            A fuga foi tensa. Os guardas começaram a suspeitar da ausência de patrulhas na torre, e Sophie teve que usar o colar para criar barreiras temporárias enquanto guiava Elias pelas sombras. Quando finalmente chegaram à saída, ouviram o som de luta — Lucas e Marcus enfrentavam vários guardas.
+        </p>
+        <p>
+            “Vá ajudá-los,” Elias disse. “Eu consigo me esconder.” Sophie hesitou, mas concordou. Correndo em direção ao som da batalha, encontrou Lucas cercado, mas ainda lutando ferozmente. Com um movimento rápido, Sophie usou o colar para emitir uma explosão de luz, desorientando os guardas e dando a eles uma chance de escapar.
+        </p>
+        <p>
+            Quando finalmente alcançaram a floresta, todos estavam ofegantes, mas vivos. Elias olhou para Sophie com gratidão. “Viktor estava certo. Você é mais do que aparenta ser. Obrigado.”
+        </p>
+        <p>
+            Sophie sorriu levemente, mas sabia que aquela era apenas uma vitória pequena em uma guerra muito maior. O Conselho estava ciente de seus movimentos agora, e o perigo só aumentaria. Ao retornarem para informar Viktor, Sophie sentiu que a verdadeira batalha estava apenas começando.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo28.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo30.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

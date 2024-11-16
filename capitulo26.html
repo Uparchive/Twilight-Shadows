@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 26</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo26">
+        <h1 class="chapter-number">Capítulo 26</h1>
+        <h2 class="chapter-title">O Despertar da Verdade</h2>
+        <p>
+            O santuário estava em silêncio quando Sophie despertou de uma noite de sonhos inquietos. As imagens do campo de batalha ainda dançavam em sua mente, e ela sabia que o que o artefato havia mostrado era mais do que uma visão. Era um aviso.
+        </p>
+        <p>
+            Ao sair do quarto, encontrou Althea aguardando na sala principal. A líder dos rebeldes parecia saber o que estava passando pela mente de Sophie. “O artefato testa você porque sabe o papel que você desempenhará,” disse Althea. “Mas a escolha final sempre será sua.”
+        </p>
+        <p>
+            Sophie suspirou, sentindo o peso das palavras. “E se eu escolher errado?” Althea aproximou-se, colocando uma mão em seu ombro. “O erro não está em escolher, mas em não agir. Confie em seu coração, Sophie. Ele guiará você.”
+        </p>
+        <p>
+            Antes que pudessem continuar, Lucas entrou apressado, sua expressão séria. “Temos companhia,” ele disse, gesticulando para que eles o seguissem. Ao chegarem à entrada do santuário, viram um grupo de figuras encapuzadas esperando pacientemente. Eles não eram os ecos das sombras; eram emissários do Conselho.
+        </p>
+        <p>
+            “Sophie,” uma das figuras chamou, sua voz fria e cheia de autoridade. “Nós viemos oferecer uma escolha. Entregue o artefato e junte-se a nós, e pouparemos os que você ama. Resista, e todos sofrerão.”
+        </p>
+        <p>
+            Sophie sentiu o sangue gelar, mas não demonstrou fraqueza. “Eu não confio em vocês,” ela respondeu, dando um passo à frente. “O que vocês oferecem é escuridão, não salvação.” A figura encapuzada riu, um som que ecoou como vidro quebrando. “Então prepare-se para o que está por vir.”
+        </p>
+        <p>
+            Lucas posicionou-se ao lado de Sophie, sua espada em punho. Althea começou a murmurar um feitiço, e a atmosfera ao redor ficou densa com energia. O confronto parecia inevitável.
+        </p>
+        <p>
+            De repente, o colar de Sophie brilhou intensamente, e uma onda de luz pulsante emanou dele, empurrando os emissários para trás. Eles recuaram, mas a figura líder apontou para Sophie, como se deixasse uma ameaça silenciosa. “Você não pode escapar de seu destino,” ele disse antes de desaparecer na escuridão.
+        </p>
+        <p>
+            Quando o perigo passou, Sophie sentiu seus joelhos cederem. Lucas a segurou antes que ela caísse. “Você foi incrível,” ele disse, sua voz cheia de orgulho. Sophie balançou a cabeça, ainda recuperando o fôlego. “Isso é só o começo,” ela respondeu. “Eles estão vindo, e precisamos estar prontos.”
+        </p>
+        <p>
+            Althea assentiu, sua expressão determinada. “Então começaremos a nos preparar. A guerra está se aproximando, Sophie, e você será a chave para decidir seu desfecho.”
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo25.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo27.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 35</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo35">
+        <h1 class="chapter-number">Capítulo 35</h1>
+        <h2 class="chapter-title">Unidos Pelo Fogo</h2>
+        <p>
+            As forças misteriosas cercavam o local, e o som de armas e feitiços ecoava no ar. Sophie, Lucas, Viktor e Althea estavam no centro do caos, lutando lado a lado com os emissários do Conselho.
+        </p>
+        <p>
+            “Não há fim para eles!” Lucas gritou enquanto bloqueava o ataque de um inimigo encapuzado. Viktor rugiu, abatendo dois oponentes com um único golpe. “Mantenham-se juntos! Eles querem nos separar!” 
+        </p>
+        <p>
+            Sophie sentiu o colar vibrar intensamente, reagindo à energia ao redor. Ela ergueu a mão, criando uma onda de luz que afastou um grupo de atacantes. “Quem são eles?” ela perguntou a Caelan, que lutava próximo a ela. Ele sacudiu a cabeça, abatendo um adversário com um movimento ágil. “Mercenários, talvez. Mas quem os enviou não quer nem o Conselho nem vocês vivos.”
+        </p>
+        <p>
+            Althea começou a murmurar um feitiço, criando uma barreira protetora ao redor do grupo. “Precisamos recuar para uma posição mais defensável,” ela sugeriu, sua voz tensa. Viktor concordou, gritando ordens para seus seguidores. “Recuem para a entrada da caverna! Rápido!”
+        </p>
+        <p>
+            Enquanto corriam, Sophie percebeu que Lucas mancava levemente. “Você está ferido,” ela disse, preocupação evidente em sua voz. Lucas balançou a cabeça. “Estou bem. Só continue.” 
+        </p>
+        <p>
+            Quando finalmente chegaram à entrada da caverna, Althea reforçou a barreira com símbolos mágicos enquanto Viktor organizava os defensores. Caelan aproximou-se de Sophie, sua expressão sombria. “Isso é o que acontece quando se desafia o equilíbrio. Vocês estão em um jogo que não entendem.”
+        </p>
+        <p>
+            Sophie o encarou, seus olhos brilhando com determinação. “Então nos ajude a entender. Mas não pense que vamos recuar.” Caelan riu levemente, mas havia um traço de respeito em seu olhar. “Você tem coragem, garota. Talvez isso seja suficiente.”
+        </p>
+        <p>
+            A batalha continuou feroz, mas a união improvável entre os rebeldes, os aldeões e os emissários do Conselho começou a virar o jogo. Viktor liderou um contra-ataque, enquanto Sophie usava o poder do colar para desintegrar os inimigos mais fortes.
+        </p>
+        <p>
+            Finalmente, o último inimigo caiu, e o campo ficou silencioso. O grupo estava exausto, mas triunfante. “Isso foi apenas o começo,” Althea alertou. “Quem quer que esteja por trás disso, não vai parar.”
+        </p>
+        <p>
+            Sophie olhou para os sobreviventes, seus olhos cheios de determinação. “Então também não pararemos. Unidos, podemos vencer qualquer coisa.” Caelan assentiu lentamente. “Você tem meu respeito. Mas lembre-se: respeito não significa confiança.”
+        </p>
+        <p>
+            Com isso, a trégua temporária se transformou em uma aliança forjada no calor da batalha. Sophie sabia que as tensões entre eles permaneceriam, mas por enquanto, tinham algo maior para enfrentar juntos.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo34.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo36.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

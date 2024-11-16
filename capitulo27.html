@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 27</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo27">
+        <h1 class="chapter-number">Capítulo 27</h1>
+        <h2 class="chapter-title">A Aliança Improvável</h2>
+        <p>
+            Após o confronto com os emissários do Conselho, o santuário estava em alerta máximo. Althea convocou uma reunião urgente, onde Sophie, Lucas e os demais rebeldes se reuniram para discutir o próximo passo.
+        </p>
+        <p>
+            “Eles estão testando nossas defesas,” disse Althea, sua voz firme. “Se continuarmos sozinhos, seremos esmagados. Precisamos de aliados.” Sophie olhou para Lucas, que assentiu levemente. “Mas quem ajudaria contra o Conselho? Eles espalharam o medo em todos os cantos.” 
+        </p>
+        <p>
+            Um dos rebeldes, um homem robusto chamado Marcus, levantou a voz. “Há rumores de um grupo de vampiros que se rebelaram contra o Conselho. Dizem que eles se escondem nas Montanhas Sombrias. Talvez possamos convencê-los a se juntar a nós.” 
+        </p>
+        <p>
+            Althea considerou as palavras. “Eles são imprevisíveis, mas não temos muitas opções. Sophie, Lucas, vocês irão até as Montanhas Sombrias para tentar formar essa aliança. Marcus os guiará.”
+        </p>
+        <p>
+            O caminho até as Montanhas Sombrias era traiçoeiro, com terrenos íngremes e florestas densas. Durante a jornada, Sophie sentiu o peso de sua missão crescer. “E se eles recusarem?” ela perguntou a Lucas, sua voz carregada de preocupação.
+        </p>
+        <p>
+            “Então lutaremos sozinhos,” ele respondeu, sua determinação clara. “Mas acho que eles vão ouvir você, Sophie. Você tem algo que nenhum deles tem: esperança.” 
+        </p>
+        <p>
+            Ao chegarem ao esconderijo dos rebeldes, foram recebidos com olhares hostis. O líder do grupo, um vampiro de aparência imponente chamado Viktor, os observou com desconfiança. “O que vocês querem aqui?” ele perguntou, sua voz grave.
+        </p>
+        <p>
+            Sophie deu um passo à frente. “Sabemos que você luta contra o Conselho. Nós também. Se unirmos forças, podemos derrotá-los juntos.” Viktor soltou uma risada sombria. “E por que confiaríamos em vocês? Humanos sempre foram peões no jogo deles.”
+        </p>
+        <p>
+            Sophie segurou o colar em seu pescoço, que brilhou suavemente. “Porque eu carrego algo que pode mudar tudo. Mas para isso, preciso de sua ajuda.” Viktor olhou para o colar, seus olhos estreitando-se. “Interessante. Mas palavras não bastam. Se quiser minha ajuda, terá que provar sua força.”
+        </p>
+        <p>
+            Ele a desafiou a um duelo contra um de seus guerreiros. Apesar de hesitar, Sophie aceitou. Usando o poder do colar, ela conseguiu derrotar o oponente sem machucá-lo gravemente, ganhando o respeito de Viktor e de seus seguidores.
+        </p>
+        <p>
+            “Muito bem,” Viktor disse, cruzando os braços. “Vocês têm minha atenção. Mas isso não significa que confio em vocês. Se querem minha aliança, terão que mostrar que estão dispostos a sacrificar tanto quanto nós.”
+        </p>
+        <p>
+            A tensão diminuiu enquanto eles começaram a discutir estratégias. Sophie sabia que essa aliança improvável era apenas o primeiro passo para o confronto final. Mas, por enquanto, era um pequeno avanço em meio à escuridão crescente.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo26.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo28.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

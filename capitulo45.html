@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 45</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo45">
+        <h1 class="chapter-number">Capítulo 45</h1>
+        <h2 class="chapter-title">O Preço da Vitória</h2>
+        <p>
+            O campo de batalha estava silencioso agora, exceto pelo vento que soprava as cinzas das sombras dissipadas. Sophie estava sentada em uma pedra, com o Fragmento da Eternidade repousando em suas mãos. Seu brilho suave parecia ser um lembrete constante de sua responsabilidade.
+        </p>
+        <p>
+            “Conseguimos,” Lucas disse, sentando-se ao lado dela. Ele ainda segurava sua espada, os músculos tensos apesar do momento de calmaria. Sophie olhou para ele, um pequeno sorriso surgindo em seus lábios. “Por enquanto. Mas o que vem depois será ainda mais difícil.”
+        </p>
+        <p>
+            Viktor aproximou-se, limpando o sangue da lâmina de sua espada. “Você mostrou que pode liderar, Sophie. Mas lembre-se, liderança tem um custo. Cada vitória exige sacrifícios. Está pronta para o que ainda precisa fazer?” 
+        </p>
+        <p>
+            Sophie levantou-se, sentindo o peso das palavras de Viktor. Ela olhou para os aliados ao seu redor — Althea, Lucas, os rebeldes sobreviventes. Todos pareciam exaustos, mas determinados. “Eu sei que isso não termina aqui. Mas enquanto tivermos uns aos outros, enfrentaremos o que vier.”
+        </p>
+        <p>
+            Althea aproximou-se com um grimório em mãos, suas expressões graves. “O Fragmento está mudando, Sophie. A cada vez que você o usa, ele se torna mais ligado a você. E isso significa que o Conselho fará de tudo para tomá-lo.” Sophie assentiu. “Então vamos nos certificar de que eles nunca consigam.”
+        </p>
+        <p>
+            O grupo começou a preparar o acampamento para o que seria uma longa noite. Viktor organizava os guardas, enquanto Althea reforçava as barreiras mágicas. Lucas, por sua vez, manteve-se ao lado de Sophie, preocupado com o cansaço visível em seu rosto.
+        </p>
+        <p>
+            “Você precisa descansar,” ele disse suavemente, segurando suas mãos. “Você não pode carregar tudo sozinha.” Sophie olhou para ele, sua expressão cansada mas resoluta. “Eu não estou sozinha, Lucas. Tenho todos vocês. Isso é o que me dá força.”
+        </p>
+        <p>
+            Quando a noite caiu, Sophie teve um momento para si mesma. O Fragmento estava seguro em sua tenda, mas ela sabia que o poder dele estava mudando algo dentro dela. Sentada sob as estrelas, ela refletiu sobre o que havia perdido e o que ainda tinha a proteger.
+        </p>
+        <p>
+            “O preço da vitória nunca é fácil,” ela murmurou para si mesma. “Mas vale a pena, se significa um futuro melhor para todos.” 
+        </p>
+        <p>
+            O silêncio da noite foi interrompido por Althea, que se aproximou com uma expressão preocupada. “Eu senti algo. Uma presença. O Conselho está se reorganizando. Eles não vão esperar muito para o próximo ataque.” Sophie assentiu, já levantando-se. “Então não podemos esperar também. Amanhã começamos a nos mover.”
+        </p>
+        <p>
+            Com a determinação renovada, Sophie voltou para o acampamento. A batalha estava apenas começando, mas pela primeira vez, ela sentiu que tinham uma chance real. O preço da vitória era alto, mas ela estava disposta a pagar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo44.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo46.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

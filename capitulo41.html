@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 41</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo41">
+        <h1 class="chapter-number">Capítulo 41</h1>
+        <h2 class="chapter-title">O Templo dos Ecos</h2>
+        <p>
+            O amanhecer encontrou o grupo às margens de um vale esquecido, onde as ruínas do templo se erguiam, envoltas em névoa e silêncio. O ar parecia carregado de energia antiga, como se o lugar estivesse vivo, observando seus visitantes.
+        </p>
+        <p>
+            Althea consultava um grimório enquanto explicava ao grupo. “O Templo dos Ecos é um lugar de julgamento. Ele não revela apenas o poder, mas também o verdadeiro coração daqueles que ousam entrar. Uma vez lá dentro, vocês estarão sozinhos.” 
+        </p>
+        <p>
+            Viktor cruzou os braços, olhando para Sophie. “E se você não passar no julgamento? E se isso for uma armadilha do Conselho?” Sophie respirou fundo. “Não temos outra escolha. Eu preciso entender o colar. Sem isso, não temos chance contra eles.”
+        </p>
+        <p>
+            Lucas colocou uma mão no ombro de Sophie. “Você não está sozinha. Mesmo que este julgamento seja apenas para você, estaremos esperando por você do outro lado.” Viktor, relutantemente, assentiu. “Vamos garantir que ninguém nos ataque enquanto você estiver lá dentro.”
+        </p>
+        <p>
+            Sophie atravessou os portões do templo, e imediatamente o mundo ao seu redor mudou. O templo estava mergulhado em escuridão, exceto por ecos de luz que pulsavam nas paredes, refletindo cenas de seu passado e vislumbres de possíveis futuros.
+        </p>
+        <p>
+            Uma voz suave, mas imponente, ecoou ao seu redor. “Sophie, portadora do colar, você busca poder. Mas será que merece a responsabilidade que ele exige?” Imagens de seus amigos em perigo e aldeias destruídas encheram o espaço. O colar em seu pescoço pulsava, mas desta vez, parecia mais pesado do que nunca.
+        </p>
+        <p>
+            “Eu não busco poder,” Sophie respondeu, sua voz tremendo, mas cheia de determinação. “Eu quero proteger aqueles que não podem lutar por si mesmos. Se isso significa carregar esse fardo, eu aceito.” 
+        </p>
+        <p>
+            A luz ao redor dela intensificou-se, e a voz respondeu. “Aceitar o fardo não é suficiente. Você deve provar que é digna.” Uma figura emergiu da luz — uma versão de Sophie, mas mais sombria, com olhos cheios de dúvida e medo.
+        </p>
+        <p>
+            “Você é fraca,” a figura disse. “Carregar o colar destruirá você. Você está colocando todos que ama em perigo.” Sophie sentiu a verdade cruel nas palavras, mas ergueu a cabeça. “Eu sei que tenho medo. Mas coragem não é a ausência do medo. É enfrentá-lo.”
+        </p>
+        <p>
+            Com essas palavras, a figura sombria desintegrou-se, e o templo começou a brilhar intensamente. O colar em seu pescoço tornou-se leve, e Sophie sentiu uma onda de energia pura atravessar seu corpo. Ela sabia que algo havia mudado.
+        </p>
+        <p>
+            Quando saiu do templo, o grupo estava esperando por ela. Viktor e Althea pareciam cautelosamente esperançosos, enquanto Lucas sorria com alívio. “Você conseguiu,” ele disse, segurando suas mãos. Sophie assentiu, sentindo-se mais forte do que nunca.
+        </p>
+        <p>
+            “Agora, estamos prontos,” ela disse. “O Conselho não está preparado para o que vem a seguir.” E com isso, o grupo partiu, ciente de que o verdadeiro confronto estava cada vez mais próximo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo40.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo42.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

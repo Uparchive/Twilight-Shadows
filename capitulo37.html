@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 37</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo37">
+        <h1 class="chapter-number">Capítulo 37</h1>
+        <h2 class="chapter-title">O Chamado da Tempestade</h2>
+        <p>
+            Os dias que se seguiram foram de trabalho intenso. Sob a liderança de Sophie e Viktor, os rebeldes começaram a recrutar mais aliados. Cada aldeia, cada comunidade escondida nas sombras do medo, era visitada com uma mensagem clara: "Juntos somos mais fortes."
+        </p>
+        <p>
+            Althea, com seus conhecimentos arcanos, começou a criar feitiços de proteção para as bases recém-formadas. “O Conselho é poderoso,” ela explicou ao grupo. “Mas eles não esperam resistência em tantas frentes. Precisamos ser rápidos.”
+        </p>
+        <p>
+            Sophie sentiu o peso da responsabilidade crescer a cada dia. Embora a chama da esperança estivesse acesa, o risco de falhar ainda pairava sobre eles. Durante uma reunião à noite, enquanto estudavam mapas e discutiam estratégias, Viktor levantou uma questão que ninguém ousara mencionar.
+        </p>
+        <p>
+            “E o colar?” ele perguntou, seu tom sério. “Sabemos que é a chave para derrotar o Conselho, mas também pode ser nossa ruína. Sophie, você tem certeza de que consegue controlá-lo?” 
+        </p>
+        <p>
+            Sophie olhou para ele, firme. “Eu sei que o colar tem um custo. Sinto isso toda vez que uso seu poder. Mas não podemos desistir. Ele é uma ferramenta, não uma sentença. Vou usá-lo para proteger todos nós, não importa o preço.” 
+        </p>
+        <p>
+            Lucas, que estava ao lado de Sophie, apoiou-a. “Ela já provou que pode controlá-lo. Sem ela, muitos de nós não estaríamos aqui agora.” Viktor assentiu, embora sua preocupação fosse evidente.
+        </p>
+        <p>
+            No dia seguinte, enquanto o grupo se preparava para viajar até uma das fortalezas do Conselho, uma tempestade começou a se formar no horizonte. Althea olhou para o céu com olhos estreitos. “Isso não é uma tempestade comum,” ela disse. “É um presságio. Algo está se movendo.”
+        </p>
+        <p>
+            Sophie sentiu o colar pulsar com intensidade, como se reagisse à energia da tempestade. “Eles sabem que estamos vindo,” ela murmurou. “E estão nos esperando.” Lucas colocou a mão no ombro dela. “Então vamos mostrar a eles do que somos capazes.”
+        </p>
+        <p>
+            Com a tempestade rugindo acima deles, o grupo avançou em direção ao desconhecido, cada passo carregado de determinação e coragem. A batalha pela liberdade estava apenas começando, e Sophie sabia que o verdadeiro teste de sua força e liderança estava prestes a acontecer.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo36.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo38.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

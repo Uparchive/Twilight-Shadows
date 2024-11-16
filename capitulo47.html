@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 47</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo47">
+        <h1 class="chapter-number">Capítulo 47</h1>
+        <h2 class="chapter-title">A Ascensão da Luz</h2>
+        <p>
+            Após a revelação na fortaleza, o grupo retornou ao acampamento com a certeza de que o Fragmento da Eternidade havia se tornado ainda mais crucial para sua missão. Sophie sentia o poder crescendo dentro de si, mas também o peso de uma responsabilidade que parecia maior a cada passo.
+        </p>
+        <p>
+            “O Conselho virá mais cedo do que esperávamos,” Althea disse enquanto analisava os restos do cristal negro que trouxeram da fortaleza. “Eles sabem que perdemos o equilíbrio no confronto. A próxima batalha não será apenas física; será pelo controle do Fragmento e da própria esperança das pessoas.”
+        </p>
+        <p>
+            Viktor, sempre prático, estava organizando as defesas. “Vamos precisar de cada aliado disponível. Esta será a maior batalha que já enfrentamos.” Ele lançou um olhar para Sophie. “E tudo gira ao redor de você. Certifique-se de estar pronta.” 
+        </p>
+        <p>
+            Sophie passou a noite em vigília, refletindo sobre tudo o que havia acontecido. As visões que o Fragmento continuava a lhe mostrar tornavam-se mais intensas: um mundo envolto em sombras, mas também flashes de luz que prometiam um futuro melhor. “A escolha está comigo,” ela murmurou. “Eu não posso falhar.” 
+        </p>
+        <p>
+            Ao amanhecer, um emissário do Conselho apareceu na borda do acampamento. Ele trazia uma mensagem gravada em um pergaminho negro: “Sophie, portadora do Fragmento. Encontre-nos no Vale das Sombras. Chegou a hora de decidir o destino deste mundo.”
+        </p>
+        <p>
+            O silêncio caiu sobre o acampamento enquanto todos absorviam a mensagem. Lucas foi o primeiro a falar. “Isso é uma armadilha. Eles querem atrair você para um lugar onde têm vantagem.” Althea balançou a cabeça. “Mas ela não pode evitar. Se não enfrentarmos o Conselho agora, eles continuarão a destruir tudo ao nosso redor.” 
+        </p>
+        <p>
+            Sophie ergueu-se, sua expressão determinada. “Eu vou. Mas não vou sozinha. Cada um de vocês é parte disso. Este é o momento pelo qual temos lutado.” Viktor assentiu. “Então nos preparemos. Se este é o nosso fim, que seja um fim digno.”
+        </p>
+        <p>
+            No caminho para o Vale das Sombras, o grupo encontrou outros que desejavam se unir à causa. Aldeões, guerreiros, e até mesmo antigos aliados de Viktor nas linhas rebeldes. A resistência estava crescendo, e Sophie sentia o peso de cada alma que colocava sua fé nela.
+        </p>
+        <p>
+            Quando chegaram ao vale, o cenário era tão sombrio quanto o nome indicava. As árvores eram retorcidas e sem vida, e o céu parecia pesado com uma escuridão que não vinha apenas das nuvens. No centro, uma figura esperava: Caelan, cercado pelos líderes do Conselho.
+        </p>
+        <p>
+            “Você finalmente veio,” Caelan disse, sua voz reverberando no ar. “Mas você não entende o que está enfrentando. O Fragmento não é uma ferramenta para a luz ou as trevas. Ele é equilíbrio, e só o Conselho pode usá-lo como deveria ser usado.” 
+        </p>
+        <p>
+            Sophie deu um passo à frente, segurando o Fragmento que brilhava intensamente. “O equilíbrio não é mantido pelo controle, mas pela liberdade. E nós não vamos permitir que vocês decidam o destino de todos sozinhos.” 
+        </p>
+        <p>
+            A batalha começou. As forças do Conselho avançaram, mas a resistência, agora fortalecida, enfrentou-as com tudo o que tinham. Sophie e Caelan duelavam no centro do campo, cada ataque e defesa criando ondas de energia que sacudiam o vale.
+        </p>
+        <p>
+            Quando o Fragmento brilhou mais forte, Sophie sentiu uma conexão com todos ao seu redor. Ela viu suas esperanças, seus medos, e a coragem que os unia. “Isso é o equilíbrio,” ela percebeu. “Não é algo que pertence a ninguém. É algo que criamos juntos.” 
+        </p>
+        <p>
+            Com um grito final, ela canalizou a energia do Fragmento, criando uma onda de luz que envolveu o campo de batalha. As sombras dissiparam-se, e os membros do Conselho recuaram, suas forças quebradas. Caelan, caído de joelhos, olhou para Sophie com algo que parecia respeito misturado ao ódio. “Você ganhou hoje, mas o equilíbrio é frágil. Cuidado para não se tornar aquilo que combate.” 
+        </p>
+        <p>
+            Quando o silêncio voltou ao vale, Sophie olhou para seus aliados, agora cercados pelos sobreviventes da resistência. “Nós não terminamos,” ela disse. “Ainda há muito a fazer. Mas hoje, demos o primeiro passo para um futuro onde ninguém decidirá por nós.” 
+        </p>
+        <p>
+            Enquanto o sol nascia, dissipando as últimas sombras, Sophie sentiu o Fragmento pulsar suavemente. A batalha estava longe de acabar, mas a luz havia encontrado seu caminho.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo46.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo48.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

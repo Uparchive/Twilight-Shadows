@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 34</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo34">
+        <h1 class="chapter-number">Capítulo 34</h1>
+        <h2 class="chapter-title">Sombras na Mesa</h2>
+        <p>
+            A sala onde a reunião foi marcada era sombria, iluminada apenas por velas que lançavam sombras dançantes nas paredes de pedra. Sophie, Lucas e Viktor aguardavam ao redor de uma mesa circular, acompanhados por Althea, que permanecia em alerta.
+        </p>
+        <p>
+            “Eles estão atrasados,” Viktor rosnou, cruzando os braços. Sophie respirou fundo, tentando manter a calma. “Eles querem nos deixar desconfortáveis. Faz parte do jogo deles.”
+        </p>
+        <p>
+            As portas se abriram lentamente, e três figuras encapuzadas entraram. A aura ao redor delas era pesada, e o ar parecia esfriar com sua presença. A figura central retirou o capuz, revelando um rosto pálido e marcado por cicatrizes. “Eu sou Caelan, emissário do Conselho,” ele disse, com uma voz suave, mas carregada de ameaça. “Estamos aqui para negociar.”
+        </p>
+        <p>
+            Sophie não perdeu tempo. “Vocês falaram de uma trégua. Estamos aqui para ouvi-los, mas não somos tolos. Se isso for uma armadilha, pagaremos na mesma moeda.” Caelan sorriu levemente. “Ah, gosto de pessoas diretas. Muito bem.”
+        </p>
+        <p>
+            Ele se aproximou da mesa, puxando um pergaminho de dentro de seu manto. “O Conselho reconhece sua resistência. Nós oferecemos uma suspensão temporária de hostilidades, com uma condição: o colar que você carrega deve ser entregue a nós.”
+        </p>
+        <p>
+            A sala ficou em silêncio. Lucas imediatamente se levantou. “Isso é ridículo! Vocês só querem o colar para aumentar seu poder.” Caelan ergueu uma sobrancelha. “E você prefere vê-lo destruir quem o carrega? Esse artefato tem um custo, humano. Mais cedo ou mais tarde, ele consumirá sua pequena heroína.”
+        </p>
+        <p>
+            Sophie apertou o colar instintivamente, sentindo sua energia pulsar. “Vocês não entendem o que isso representa. Não é uma arma para ser usada contra os outros. É uma fonte de equilíbrio, algo que vocês nunca terão.” 
+        </p>
+        <p>
+            Caelan riu suavemente, mas havia algo sombrio em seu tom. “Equilíbrio? Que palavra bonita. Mas o equilíbrio exige sacrifício. Está preparada para pagar o preço?” 
+        </p>
+        <p>
+            Viktor interrompeu, batendo na mesa. “Chega de discursos. Se querem uma trégua, provem sua seriedade. Liberem as aldeias que estão sob seu controle e parem de caçar os inocentes.” Caelan olhou para Viktor com desdém. “Você é ingênuo. Não há trégua sem custo.”
+        </p>
+        <p>
+            Antes que a discussão pudesse continuar, uma explosão ressoou do lado de fora. Todos se levantaram, suas mãos indo para suas armas. Althea correu para a janela e olhou para fora. “Estamos sob ataque!” 
+        </p>
+        <p>
+            Sophie olhou para Caelan, que parecia tão surpreso quanto eles. “Você sabia disso?” ela perguntou. Ele balançou a cabeça, genuinamente confuso. “Isso não foi ordenado pelo Conselho.”
+        </p>
+        <p>
+            O caos tomou conta da sala. Sophie sabia que, se quisessem sobreviver, precisariam unir forças, mesmo que temporariamente, com o Conselho. “Vocês vão lutar conosco, ou isso acaba agora!” ela exigiu. Caelan hesitou, mas finalmente assentiu. “Parece que temos um inimigo em comum.”
+        </p>
+        <p>
+            Com a batalha do lado de fora crescendo, Sophie e seus aliados se prepararam para enfrentar a nova ameaça, cientes de que as sombras na mesa haviam mudado o rumo da guerra.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo33.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo35.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

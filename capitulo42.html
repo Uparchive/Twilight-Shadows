@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 42</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo42">
+        <h1 class="chapter-number">Capítulo 42</h1>
+        <h2 class="chapter-title">O Encontro com a Eternidade</h2>
+        <p>
+            Após deixar o Templo dos Ecos, Sophie liderava o grupo em direção ao próximo destino — uma caverna oculta nas montanhas que, segundo Althea, guardava o maior segredo do Conselho: o Fragmento da Eternidade. A caminhada era árdua, mas todos sentiam que estavam à beira de algo monumental.
+        </p>
+        <p>
+            “O Fragmento da Eternidade não é apenas um artefato,” Althea explicou enquanto consultava um mapa antigo. “Ele é a conexão entre o mundo físico e o espiritual. Se cair nas mãos do Conselho, eles terão controle sobre a própria linha do tempo.” 
+        </p>
+        <p>
+            Viktor franziu a testa. “E como sabemos que podemos usá-lo sem sermos corrompidos?” Sophie olhou para ele, sua expressão séria. “Não podemos ter certeza. Mas se não tentarmos, o mundo será destruído pela ambição deles. Isso é um risco que estou disposta a correr.”
+        </p>
+        <p>
+            Ao chegarem à entrada da caverna, o grupo foi recebido por uma sensação de frio avassalador, como se a própria vida fosse sugada do ar. “Este lugar... não é natural,” Lucas disse, segurando sua espada com força. Althea murmurou encantamentos de proteção enquanto Viktor verificava os arredores. “Se é aqui que o Fragmento está escondido, não seremos os únicos a procurá-lo.”
+        </p>
+        <p>
+            Dentro da caverna, cristais brilhavam nas paredes, emitindo uma luz pálida e inquietante. Cada passo ecoava, e o som parecia se multiplicar ao infinito. No centro, um pedestal reluzia, segurando uma esfera brilhante que parecia conter estrelas girando em seu núcleo.
+        </p>
+        <p>
+            “O Fragmento,” Althea disse com reverência. Mas antes que pudessem se aproximar, um trovão sacudiu a caverna. Das sombras, emergiram membros do Conselho, liderados por Caelan, o mesmo emissário que haviam enfrentado antes.
+        </p>
+        <p>
+            “Vocês chegaram longe demais,” Caelan disse, sua voz carregada de poder. “O Fragmento pertence ao Conselho. Vocês não têm ideia do que estão lidando.” Sophie deu um passo à frente, seu colar brilhando intensamente. “E vocês não têm ideia do que somos capazes. Não vamos permitir que destruam este mundo.”
+        </p>
+        <p>
+            A batalha que se seguiu foi diferente de qualquer outra. As energias liberadas pelo Fragmento reagiam à magia e às armas, amplificando cada ataque e cada defesa. Althea conjurava escudos, enquanto Viktor e Lucas enfrentavam os guardas do Conselho com ferocidade. Sophie, por sua vez, focava em Caelan.
+        </p>
+        <p>
+            “Você não entende o que está protegendo,” ele disse enquanto conjurava sombras para cercá-la. Sophie contra-atacou com uma explosão de luz. “Talvez eu não entenda completamente, mas sei o que é certo. E sei que vocês querem usar isso para escravizar todos nós.”
+        </p>
+        <p>
+            Conforme a batalha intensificava-se, o colar de Sophie começou a pulsar em sincronia com o Fragmento. Ela sentiu uma conexão profunda, como se pudesse ouvir sussurros vindos do próprio tecido do universo. “Sophie, cuidado!” Lucas gritou, mas era tarde demais. Uma explosão de energia emanou do Fragmento, jogando todos para trás.
+        </p>
+        <p>
+            Quando a poeira baixou, Sophie estava de joelhos diante do Fragmento, mas agora ela entendia. “É mais do que poder,” ela murmurou. “É equilíbrio. É a escolha entre o caos e a ordem.” Ela olhou para Caelan, que parecia abalado pela explosão. “E nós escolhemos lutar pelo equilíbrio.”
+        </p>
+        <p>
+            Antes que o Conselho pudesse reagir, Sophie estendeu a mão, tocando o Fragmento. A caverna foi preenchida por uma luz cegante, e em um instante, o tempo pareceu parar. Quando a luz diminuiu, os membros do Conselho haviam desaparecido, e Sophie segurava o Fragmento da Eternidade.
+        </p>
+        <p>
+            “O que aconteceu?” Lucas perguntou, correndo até ela. Sophie olhou para ele, exausta, mas determinada. “O Fragmento nos deu uma chance. Agora, cabe a nós usá-la com sabedoria.” Viktor e Althea aproximaram-se, ambos visivelmente impressionados.
+        </p>
+        <p>
+            “Isso muda tudo,” Althea disse. “Mas também coloca um alvo ainda maior em nossas costas.” Sophie assentiu, sabendo que o verdadeiro desafio estava apenas começando. Enquanto deixavam a caverna, ela sentiu o peso de sua missão, mas também a força que crescia em sua união com os outros.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo41.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo43.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

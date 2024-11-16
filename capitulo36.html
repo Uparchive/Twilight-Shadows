@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 36</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo36">
+        <h1 class="chapter-number">Capítulo 36</h1>
+        <h2 class="chapter-title">A Chama da Unidade</h2>
+        <p>
+            Após a batalha, o grupo reuniu-se na caverna para discutir seus próximos passos. As tensões ainda eram palpáveis entre os rebeldes e os emissários do Conselho, mas a recente vitória havia criado uma trégua frágil.
+        </p>
+        <p>
+            Viktor foi o primeiro a falar, sua voz ecoando na caverna. “Quem quer que tenha enviado esses mercenários, tinha um objetivo claro: nos eliminar antes que pudéssemos nos unir. Isso significa que estamos no caminho certo.”
+        </p>
+        <p>
+            Caelan, que estava sentado em um canto, cruzou os braços. “Concordo. Mas não podemos ignorar o fato de que essa aliança é instável. Precisamos definir os termos agora, ou não chegaremos longe.” 
+        </p>
+        <p>
+            Sophie olhou para os dois, sua expressão séria. “Todos sabemos que o Conselho e seus aliados não vão parar. Precisamos deixar nossas diferenças de lado e nos concentrar no verdadeiro inimigo.” Ela se levantou, andando pela sala. “Se queremos vencer, precisamos confiar uns nos outros. Ou, pelo menos, tentar.”
+        </p>
+        <p>
+            Lucas assentiu. “A confiança não surge do nada, mas a batalha de hoje provou que podemos lutar juntos. Isso é um começo.” Althea acrescentou: “Precisamos mais do que alianças; precisamos de uma estratégia sólida. Cada movimento deve ser calculado.”
+        </p>
+        <p>
+            Um silêncio tomou conta do local, até que um jovem aldeão, que havia lutado bravamente na batalha, falou. “Eu acredito em vocês. Vocês mostraram hoje que podemos resistir. Se nos unirmos, temos uma chance.” Suas palavras simples mas sinceras ressoaram no coração de todos.
+        </p>
+        <p>
+            Sophie sentiu uma nova determinação crescer dentro dela. Ela olhou para cada pessoa na caverna, vendo não apenas aliados relutantes, mas um exército em potencial. “Unidos, somos mais fortes do que eles imaginam. É hora de acender a chama da resistência em todos os cantos deste mundo.”
+        </p>
+        <p>
+            Viktor se levantou, oferecendo a mão a Sophie. “Muito bem. Vamos trabalhar juntos. Mas lembre-se, garota: confio em suas palavras, mas não hesitarei em agir se achar que está falhando.” Sophie apertou sua mão, sua determinação inabalável. “Então não vamos falhar.”
+        </p>
+        <p>
+            Com o primeiro passo dado, o grupo começou a planejar. Mapas foram desenrolados, estratégias foram discutidas, e tarefas foram delegadas. Sophie sabia que o caminho à frente seria perigoso, mas pela primeira vez, sentia que tinham uma chance real.
+        </p>
+        <p>
+            Enquanto o grupo trabalhava, a chama da unidade começava a crescer. Sophie sabia que aquela era apenas a primeira centelha de algo muito maior. O Conselho não sabia o que estava por vir.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo35.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo37.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

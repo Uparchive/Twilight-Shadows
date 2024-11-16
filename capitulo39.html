@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 39</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo39">
+        <h1 class="chapter-number">Capítulo 39</h1>
+        <h2 class="chapter-title">O Confronto na Fortaleza</h2>
+        <p>
+            Os portões da fortaleza se fecharam atrás do grupo assim que entraram. A tempestade rugia lá fora, mas dentro das muralhas, o silêncio era sufocante. As tochas nas paredes lançavam sombras que pareciam se mover sozinhas.
+        </p>
+        <p>
+            Althea segurava seu bastão com força, pronta para qualquer ataque. “Algo está errado,” ela sussurrou. “Eles sabiam que viríamos, mas onde estão os guardas?” Viktor bufou, sua espada brilhando na luz bruxuleante. “Eles estão nos esperando. Essa é uma armadilha.”
+        </p>
+        <p>
+            Antes que pudessem reagir, as sombras nas paredes começaram a se solidificar, assumindo formas humanoides. Os guardas do Conselho, envoltos em escuridão, apareceram, cercando o grupo. No alto de uma escadaria, uma figura encapuzada observava tudo com um olhar calculista.
+        </p>
+        <p>
+            “Vocês foram tolos em vir até aqui,” a figura disse, sua voz ecoando pela sala. “O colar não pertence a você, Sophie. Entregue-o e talvez pouparemos seus aliados.” Sophie deu um passo à frente, o colar brilhando intensamente em seu pescoço. “Vocês nunca terão isso. Ele não é uma arma para ser usada para o mal.”
+        </p>
+        <p>
+            Com um gesto da figura encapuzada, os guardas atacaram. O grupo reagiu imediatamente. Viktor liderou o ataque, abrindo caminho com sua espada, enquanto Lucas protegia Sophie, lutando ao seu lado com determinação feroz. Althea conjurava feitiços, lançando raios de luz que dissipavam as sombras.
+        </p>
+        <p>
+            Sophie sentiu o colar pulsar com força, como se pedisse para ser usado. Concentrando-se, ela liberou uma onda de luz que empurrou os inimigos para trás, criando uma breve pausa na batalha. “Isso não vai acabar assim,” ela disse, encarando a figura encapuzada.
+        </p>
+        <p>
+            A figura desceu lentamente a escadaria, revelando um rosto pálido e olhos que brilhavam com poder. “Você não entende o que está enfrentando,” ele disse, levantando a mão. Uma lança de sombras foi conjurada e atirada diretamente em Sophie.
+        </p>
+        <p>
+            Lucas bloqueou o ataque no último momento, sendo jogado para trás pelo impacto. “Lucas!” Sophie gritou, correndo até ele. Ele estava ferido, mas vivo. “Eu estou bem,” ele disse com dificuldade. “Acabe com isso.”
+        </p>
+        <p>
+            Com uma nova onda de determinação, Sophie levantou-se e canalizou toda a energia do colar. Uma luz ofuscante preencheu a sala, cegando os inimigos e quebrando a formação das sombras. A figura encapuzada recuou, protegendo-se da luz.
+        </p>
+        <p>
+            “Isso não acabou,” ele disse antes de desaparecer nas sombras. Quando a luz diminuiu, a sala estava vazia, exceto pelo grupo exausto, mas vivo. Sophie ajudou Lucas a se levantar, enquanto Althea examinava a sala.
+        </p>
+        <p>
+            “Isso foi um aviso,” Viktor disse, olhando para Sophie. “Eles estão testando você. Da próxima vez, não será tão fácil.” Sophie assentiu, sentindo o peso da batalha, mas também a força que crescia dentro dela. O confronto havia terminado, mas a guerra estava longe de acabar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo38.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo40.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

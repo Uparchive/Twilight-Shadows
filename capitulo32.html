@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 32</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo32">
+        <h1 class="chapter-number">Capítulo 32</h1>
+        <h2 class="chapter-title">O Eco da Resistência</h2>
+        <p>
+            A batalha pela vila foi feroz. As forças do Conselho das Sombras atacavam sem piedade, mas os defensores, inspirados pelas palavras e liderança de Sophie, resistiam bravamente. As chamas iluminavam a escuridão enquanto os gritos de guerra ecoavam pela floresta.
+        </p>
+        <p>
+            Sophie sentiu o poder do colar pulsar fortemente, guiando seus movimentos e intensificando sua luz. Cada vez que levantava a mão, uma barreira luminosa protegia os aldeões de ataques fatais. “Nós não vamos cair hoje!” ela gritou, sua voz cortando o caos.
+        </p>
+        <p>
+            Enquanto isso, Lucas liderava um grupo de aldeões e vampiros rebeldes, repelindo os atacantes com uma força impressionante. Viktor, embora relutante no início, mostrava ser um aliado valioso, lutando lado a lado com os humanos. “Eles não podem vencer se estivermos unidos,” ele rugiu, abatendo dois inimigos com um golpe.
+        </p>
+        <p>
+            Porém, no meio do caos, Sophie percebeu um movimento estranho no horizonte. Uma figura encapuzada, emanando uma aura sinistra, observava a batalha à distância. Ela sentiu um calafrio. “O Conselho está aqui,” ela murmurou para si mesma.
+        </p>
+        <p>
+            De repente, um grupo de soldados avançou diretamente em direção a ela, claramente visando eliminá-la. Sophie se preparou, mas antes que pudesse reagir, Lucas surgiu, enfrentando os inimigos com uma ferocidade impressionante. “Não vou deixar que toquem em você,” ele disse entre golpes.
+        </p>
+        <p>
+            Com a ajuda de Viktor e Althea, os soldados foram repelidos, mas Sophie sabia que a batalha estava longe de terminar. A figura encapuzada avançou lentamente, sua presença dominando o campo. Quando ele falou, sua voz soava como mil sussurros.
+        </p>
+        <p>
+            “Sophie, portadora do colar, sua resistência é fútil. Entregue-se e pouparei os inocentes.” Sophie ergueu o queixo, sua determinação inabalável. “Nunca. Vocês já tiraram demais. Não vou deixar que tirem mais nada.” A luz do colar brilhou intensamente, iluminando todo o campo.
+        </p>
+        <p>
+            A figura encapuzada levantou a mão, conjurando uma sombra que avançou em direção a Sophie. Ela usou toda a sua força para repelir o ataque, criando uma explosão de luz que fez o inimigo recuar. Mas o esforço a deixou exausta, e ela caiu de joelhos.
+        </p>
+        <p>
+            Lucas correu até ela, ajudando-a a se levantar. “Você conseguiu afastá-lo. Mas ele voltará,” ele disse, preocupação em sua voz. Sophie assentiu, olhando para o campo de batalha. O Conselho havia recuado, mas todos sabiam que aquilo era apenas o começo.
+        </p>
+        <p>
+            Enquanto os aldeões comemoravam a vitória temporária, Sophie sabia que o verdadeiro desafio ainda estava por vir. Ela sentiu o peso de sua missão mais do que nunca, mas também encontrou força naqueles ao seu redor. A resistência havia começado, e ela não estava sozinha.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo31.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo33.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

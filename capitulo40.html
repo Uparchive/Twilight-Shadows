@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 40</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo40">
+        <h1 class="chapter-number">Capítulo 40</h1>
+        <h2 class="chapter-title">A Decisão</h2>
+        <p>
+            O grupo deixou a fortaleza sob o manto de uma noite tranquila, mas a tensão era palpável. Cada passo de Sophie parecia mais pesado, como se o colar estivesse absorvendo suas forças após o confronto. Lucas, ainda ferido, caminhava ao lado dela, determinado a não mostrar fraqueza.
+        </p>
+        <p>
+            “Você fez bem lá dentro,” Viktor disse, quebrando o silêncio. “Mas aquele líder... ele voltará. E estará mais preparado.” Sophie olhou para ele, sua expressão séria. “Então nós também precisamos estar. Não podemos recuar agora.”
+        </p>
+        <p>
+            Ao chegarem a um ponto seguro, Althea preparou um pequeno acampamento. Enquanto ela aplicava feitiços curativos em Lucas, Sophie se afastou para pensar. O colar pulsava levemente, como se sussurrasse segredos que ela ainda não podia compreender.
+        </p>
+        <p>
+            “Você não pode carregar isso sozinha,” Lucas disse, aproximando-se dela. Sophie balançou a cabeça, sem olhá-lo. “Não tenho escolha. O colar me escolheu. E se falharmos, todos pagarão o preço.” Lucas tocou seu ombro suavemente. “Você não está sozinha. Nós todos escolhemos lutar ao seu lado.”
+        </p>
+        <p>
+            Enquanto o grupo descansava, Althea estudava um mapa antigo. “Há uma chance,” ela disse, chamando a atenção de todos. “Um antigo templo, esquecido pelo tempo, onde dizem que o poder do colar pode ser compreendido completamente. Mas é perigoso.”
+        </p>
+        <p>
+            Viktor franziu a testa. “Outro risco? Estamos nos desgastando. Não podemos lutar em todas as frentes.” Sophie levantou-se, sua voz cheia de determinação. “Se isso nos der uma chance real de vencer, vale o risco. Nós iremos ao templo.”
+        </p>
+        <p>
+            O grupo concordou, embora o medo fosse visível em seus rostos. Naquela noite, enquanto as estrelas brilhavam acima, Sophie sentiu o peso de sua decisão. O templo poderia ser a chave para derrotar o Conselho, mas também poderia ser sua ruína.
+        </p>
+        <p>
+            Ao olhar para Lucas, Althea e Viktor, ela encontrou força. Não importava o que viesse, eles enfrentariam juntos. A batalha estava longe de terminar, mas Sophie sabia que cada passo os aproximava de um destino que mudaria tudo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo39.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo41.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 48</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo48">
+        <h1 class="chapter-number">Capítulo 48</h1>
+        <h2 class="chapter-title">Os Ecos da Decisão</h2>
+        <p>
+            Após a batalha no Vale das Sombras, o grupo retornou ao acampamento com um misto de exaustão e alívio. Apesar da vitória, Sophie sabia que cada passo os aproximava do confronto final, onde as consequências seriam irreversíveis.
+        </p>
+        <p>
+            O Fragmento pulsava em suas mãos, brilhando mais intensamente a cada momento. “Está mudando,” Althea disse, observando o artefato. “O Fragmento responde a você, Sophie. Está conectado não apenas à sua força, mas à sua própria essência.” 
+        </p>
+        <p>
+            Viktor interrompeu, sua expressão severa. “Se está tão conectado a ela, isso significa que o Conselho só precisa de Sophie para tomá-lo. Isso nos coloca em uma posição ainda mais vulnerável.” Lucas deu um passo à frente, protegendo Sophie com sua presença. “Ela não está sozinha. Estamos aqui para garantir que o Conselho nunca toque nela.” 
+        </p>
+        <p>
+            Sophie sentiu o peso das palavras de Viktor, mas também a força nas de Lucas. “Eu escolhi este caminho,” ela disse, sua voz firme. “E enquanto estivermos unidos, o Conselho não nos derrotará. Eles dependem de nossa divisão. Nós dependemos da nossa união.”
+        </p>
+        <p>
+            Durante a noite, enquanto todos descansavam, Sophie teve outra visão. Desta vez, ela viu o Fragmento sendo destruído, e uma onda de equilíbrio e caos se espalhando pelo mundo. A visão deixou-a inquieta, mas também lhe trouxe uma certeza: o destino do Fragmento precisava ser decidido por ela.
+        </p>
+        <p>
+            Pela manhã, Althea apresentou uma descoberta. “Há um antigo ritual mencionado nos textos que pode permitir que o Fragmento seja fundido de volta ao equilíbrio universal. Mas é um processo que exige um sacrifício.” Todos ficaram em silêncio, e Sophie foi a primeira a falar. “Se esse sacrifício for necessário, eu o farei.”
+        </p>
+        <p>
+            Lucas imediatamente se opôs. “Não, Sophie! Sempre há outra maneira. Não podemos simplesmente aceitar que você... que você...” Sua voz falhou, e Sophie tocou sua mão. “Lucas, você me ensinou a lutar pelo que acredito. E é isso que estou fazendo.” 
+        </p>
+        <p>
+            Viktor e Althea, embora relutantes, concordaram em começar os preparativos para o ritual. Enquanto isso, o Conselho começava a mobilizar suas forças para um ataque direto, sabendo que o Fragmento estava vulnerável. “Temos pouco tempo,” Althea alertou. “Se vamos fazer isso, precisa ser agora.” 
+        </p>
+        <p>
+            Enquanto os preparativos eram feitos, Sophie reuniu seus aliados. “Esta pode ser a última batalha,” ela disse, olhando para cada um deles. “Mas é uma batalha pela liberdade, pela luz e pela escolha. Não importa o que aconteça, lembrem-se de que lutamos por algo maior que nós mesmos.” 
+        </p>
+        <p>
+            Lucas segurou sua mão, seus olhos cheios de emoção. “Seja qual for o resultado, eu estou com você.” Sophie sorriu levemente, sentindo a força do vínculo que eles haviam construído. “E eu com você.”
+        </p>
+        <p>
+            Enquanto a noite caía, o grupo se preparava para o inevitável confronto. O ritual seria realizado ao amanhecer, e Sophie sabia que o destino do mundo seria decidido nas próximas horas. O Fragmento da Eternidade brilhava intensamente, como se compartilhasse da mesma determinação que ela.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo47.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo49.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

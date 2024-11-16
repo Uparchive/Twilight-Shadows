@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 46</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo46">
+        <h1 class="chapter-number">Capítulo 46</h1>
+        <h2 class="chapter-title">A Verdade Oculta</h2>
+        <p>
+            Quando o amanhecer rompeu, o acampamento estava silencioso, mas todos estavam alerta. Sophie reuniu o grupo para discutir a próxima etapa. O Fragmento da Eternidade, agora envolto em um tecido mágico de proteção, parecia brilhar com mais intensidade, como se pressentisse algo iminente.
+        </p>
+        <p>
+            “Temos informações de que o Conselho está escondendo algo em suas terras ao norte,” Althea disse, apontando para o mapa à sua frente. “Algo que eles não querem que saibamos. Pode ser a chave para entender completamente o Fragmento.” 
+        </p>
+        <p>
+            Viktor franziu a testa. “Outro risco? Já estamos sendo caçados, e você quer entrar no coração do território inimigo?” Althea respondeu, sua voz firme. “O Fragmento é poderoso, mas incompleto. O que quer que esteja lá pode nos dar uma vantagem crucial.” 
+        </p>
+        <p>
+            Sophie olhou para seus aliados. “Não é uma decisão fácil, mas precisamos saber. Se há algo que o Conselho teme, devemos descobrir o que é. Isso pode ser a diferença entre vitória e derrota.” Lucas assentiu, sua confiança nela inabalável. “Então vamos descobrir. Juntos.” 
+        </p>
+        <p>
+            A jornada para o norte foi traiçoeira. O grupo viajou por terras desoladas, evitando patrulhas do Conselho e enfrentando o clima hostil. Durante as noites, Sophie começou a ter visões — fragmentos de memórias que não eram suas, mas que pareciam ligadas ao Fragmento. Ela viu batalhas antigas, sacrifícios e uma figura envolta em luz.
+        </p>
+        <p>
+            “As visões estão ficando mais intensas,” ela confessou a Althea durante uma pausa. “É como se o Fragmento estivesse tentando me dizer algo, mas não consigo entender.” Althea olhou para ela com preocupação. “O Fragmento está conectado ao equilíbrio do mundo. Talvez ele esteja mostrando a você o que está em jogo.” 
+        </p>
+        <p>
+            Finalmente, o grupo chegou a uma antiga fortaleza abandonada, escondida nas montanhas ao norte. O ar ao redor era pesado, como se o lugar estivesse imbuído de uma magia antiga. “Aqui é onde o segredo está escondido,” Althea disse, olhando para o mapa. “Mas cuidado. Algo neste lugar não quer ser encontrado.”
+        </p>
+        <p>
+            Dentro da fortaleza, o grupo encontrou um salão central, onde uma grande plataforma de pedra estava coberta de runas brilhantes. No centro, um cristal negro pulsava com uma energia opressiva. “Isso é...” Althea começou, mas sua voz falhou. “É a Sombra do Fragmento,” Sophie completou, sentindo uma conexão imediata com o objeto.
+        </p>
+        <p>
+            Antes que pudessem se aproximar, o salão foi tomado por uma presença maligna. Uma voz fria ecoou pelas paredes. “Vocês não deveriam estar aqui.” Caelan apareceu, cercado por soldados do Conselho. “Agora, vocês verão o que acontece com aqueles que desafiam o destino.” 
+        </p>
+        <p>
+            A batalha que se seguiu foi brutal. Althea conjurava feitiços defensivos, enquanto Viktor e Lucas enfrentavam os soldados com força e determinação. Sophie, segurando o Fragmento da Eternidade, sentiu uma energia diferente ao confrontar Caelan. Ele atacava com sombras, mas ela contra-atacava com luz, equilibrando as forças.
+        </p>
+        <p>
+            Quando a batalha parecia estar em um impasse, Sophie avançou, estendendo o Fragmento em direção ao cristal negro. A luz e a escuridão colidiram, criando uma explosão de energia que varreu o salão. Quando a poeira baixou, Caelan havia desaparecido, e o cristal negro estava partido.
+        </p>
+        <p>
+            Sophie caiu de joelhos, exausta, mas segura do que havia descoberto. “A Sombra do Fragmento... era a chave para entender seu verdadeiro poder. O Conselho não queria que soubéssemos. Agora, temos uma chance real de vencer.” Lucas ajudou-a a levantar, e Althea examinou os restos do cristal.
+        </p>
+        <p>
+            “Isso muda tudo,” Althea disse, olhando para o Fragmento com novos olhos. “Mas também significa que o Conselho virá com toda a sua força.” Viktor assentiu, seu tom sombrio. “Então é melhor estarmos preparados.”
+        </p>
+        <p>
+            Enquanto deixavam a fortaleza, Sophie sentiu uma nova força dentro dela. A verdade sobre o Fragmento começava a se revelar, mas ela sabia que o caminho à frente seria ainda mais perigoso. A batalha final estava se aproximando.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo45.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo47.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

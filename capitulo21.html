@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 21</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo21">
+        <h1 class="chapter-number">Capítulo 21</h1>
+        <h2 class="chapter-title">O Guardião Esquecido</h2>
+        <p>
+            Após atravessar a Ponte Entre Dois Mundos, Sophie sentiu uma nova energia pulsando dentro dela. O caminho à frente era estreito e cercado por árvores que pareciam mais antigas do que o tempo. Althea caminhava à frente, sua postura indicando que conhecia bem aquele terreno.
+        </p>
+        <p>
+            “Para onde estamos indo agora?” Sophie perguntou, sua voz baixa para não perturbar o silêncio místico do lugar. Althea não se virou ao responder. “Ao encontro do Guardião Esquecido. Ele é o único que pode revelar a localização do próximo artefato.”
+        </p>
+        <p>
+            Lucas, ao lado de Sophie, parecia desconfiado. “Se ele foi esquecido, como podemos ter certeza de que está vivo?” Althea lançou um olhar rápido para Lucas. “Ele está vivo. Mas sobreviver nesse exílio tem um preço. Ele pode não ser... como você espera.”
+        </p>
+        <p>
+            O grupo chegou a uma clareira onde uma pequena cabana, coberta de musgo e quase invisível em meio à vegetação, estava parcialmente escondida. A energia ao redor era densa, e Sophie sentiu o colar pulsar novamente, como se reagisse à presença de algo poderoso.
+        </p>
+        <p>
+            Althea se aproximou da porta da cabana e bateu três vezes, recitando uma frase em uma língua que Sophie não reconheceu. Por um momento, nada aconteceu. Então, a porta se abriu com um ranger lento, revelando um homem idoso com olhos dourados que brilhavam como o pôr do sol.
+        </p>
+        <p>
+            “Vocês finalmente vieram,” disse o homem, sua voz profunda e ressonante. “Demoraram mais do que esperava.” Ele olhou para Sophie, estudando-a com intensidade. “Você carrega o colar. Então é verdade. O ciclo recomeça.”
+        </p>
+        <p>
+            Sophie hesitou antes de falar. “Você é o Guardião Esquecido?” O homem soltou uma risada curta. “Era como me chamavam, antes que o tempo me enterrasse. Agora, sou apenas alguém que guarda segredos que ninguém quer lembrar.”
+        </p>
+        <p>
+            Ele gesticulou para que entrassem, e o grupo o seguiu para dentro da cabana. O interior era maior do que parecia por fora, com prateleiras cheias de livros antigos e artefatos que pareciam vibrar com energia. “O próximo artefato,” disse Althea, “onde está?”
+        </p>
+        <p>
+            O Guardião suspirou, como se as palavras fossem um fardo. “O artefato que procuram é conhecido como o Orbe da Eternidade. Ele contém fragmentos do tempo, capazes de revelar verdades ocultas e possibilidades futuras. Mas não está aqui. Está escondido na Cripta do Crepúsculo, um lugar que testa não só a força, mas também o coração.”
+        </p>
+        <p>
+            Sophie sentiu um arrepio. “E como chegamos lá?” O Guardião olhou diretamente para ela. “Você deve atravessar outro teste. A Cripta não se abre para qualquer um. Somente alguém digno, com coragem para enfrentar o passado e aceitar o futuro, pode entrar.”
+        </p>
+        <p>
+            Lucas estreitou os olhos. “E se falhar?” O Guardião sorriu enigmaticamente. “Então, ela será consumida pela própria escuridão.”
+        </p>
+        <p>
+            A tensão no ar era palpável, mas Sophie ergueu o queixo, determinada. “Eu farei isso. Não importa o risco.” O Guardião assentiu lentamente. “Então vá. Prepare-se, Sophie. A Cripta do Crepúsculo é tanto uma chave quanto um espelho. O que você verá lá dentro mudará tudo.”
+        </p>
+        <p>
+            Enquanto eles saíam da cabana, Lucas se aproximou de Sophie. “Você não precisa fazer isso sozinha,” ele disse, sua voz carregada de preocupação. Sophie olhou para ele, sentindo a intensidade de suas palavras. “Eu sei. Mas algumas coisas, Lucas, só eu posso enfrentar.”
+        </p>
+        <p>
+            A noite caiu sobre eles enquanto se preparavam para a próxima etapa. Sophie olhou para o céu estrelado, sentindo o peso de sua missão. O caminho à frente era incerto, mas ela sabia que não podia recuar agora.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo20.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo22.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
