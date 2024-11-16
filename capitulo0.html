@@ -9,22 +9,18 @@
     <script src="script.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Identifique o livro atual (por exemplo, usando um atributo data no body)
             const currentBook = document.body.dataset.bookId || "twilightshadows";
 
-            // Função para obter o nome do armazenamento local com base no livro
             function getStorageKey() {
                 return `${currentBook}_lastReadChapter`;
             }
 
-            // Salvar o ID da introdução no localStorage
             const currentChapterId = document.querySelector(".introducao").id;
             setLastRead(currentChapterId);
 
-            // Função para salvar o capítulo atual no localStorage
             function setLastRead(chapterId) {
                 localStorage.setItem(getStorageKey(), chapterId);
-                console.log("Seção salva no localStorage:", chapterId); // Log para debug
+                console.log("Seção salva no localStorage:", chapterId);
             }
         });
 
@@ -36,7 +32,6 @@
                 return `${currentBook}_lastReadChapter`;
             }
 
-            // Salva a introdução no localStorage antes de navegar
             localStorage.setItem(getStorageKey(), currentChapterId);
             console.log("Navegando para:", url, "Seção salva:", currentChapterId);
             window.location.href = url;
@@ -44,20 +39,27 @@
     </script>
 </head>
 <body data-book-id="twilightshadows">
-    <!-- Identificação da introdução com classe "introducao" e id "introducao" -->
     <div class="container introducao" id="capitulo0">
         <h1 class="chapter-number">Sobre o Livro</h1>
         <h2 class="chapter-title">Twilight Shadows</h2>
         <img src="https://1drv.ms/u/c/c6efee52b9f623b4/IQRQ8F29ViH5Qq0Oi5bGW--yAVPUUaB2HoW_sDPumf4bZwk?width=1792&height=1024" alt="Capa de Twilight Shadows" class="book-cover">
         <p>
-            Bem-vindo a <strong>Twilight Shadows</strong>, uma história que entrelaça o mistério das sombras com o brilho do amor adolescente. 
-            Nesta narrativa repleta de segredos, uma jovem descobre que o amor pode ser tão perigoso quanto irresistível, especialmente quando envolve um mundo habitado por vampiros.
+            <strong>Twilight Shadows</strong> não é apenas uma história; é uma jornada por escolhas, sacrifícios e o poder inabalável da união. 
+            Através das páginas deste livro, você será levado a um mundo onde a luz e a escuridão não são meros conceitos opostos, 
+            mas forças complementares que moldam o destino.
         </p>
         <p>
-            Em um ambiente sombrio e cheio de reviravoltas, prepare-se para mergulhar em uma aventura onde escolhas difíceis, amores proibidos e a luta entre luz e trevas ditam o destino de todos.
+            Em um universo onde o equilíbrio está em jogo, Sophie emerge como uma líder relutante, mas determinada, enfrentando os 
+            mistérios do Fragmento da Eternidade e os perigos de um Conselho sombrio que anseia por controle absoluto. 
+            Cada capítulo é uma peça do quebra-cabeça que revela o verdadeiro custo do poder e o impacto de nossas escolhas no mundo ao nosso redor.
         </p>
         <p>
-            Segure-se, pois esta é uma jornada onde o coração e a eternidade estão em jogo.
+            Nesta aventura épica, você encontrará coragem, sacrifício, amor e a descoberta de que, mesmo nas sombras mais profundas, 
+            uma faísca de luz pode transformar tudo. 
+        </p>
+        <p>
+            Publicado oficialmente em <strong>16 de novembro de 2024, às 17:00</strong>, este livro é um convite para sonhar, refletir e se inspirar. 
+            Sob a custódia de <strong>Kell Shalom</strong>, <em>Twilight Shadows</em> está protegido por direitos reservados, mas é livre para transformar o coração de quem ousar abri-lo.
         </p>
         <div class="buttons">
             <button class="previous" onclick="navigateTo('index.html')">Anterior</button>
