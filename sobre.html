@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Livro: Twilight Shadows</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Salvar o ID da introdução no localStorage
+            const currentChapterId = document.querySelector(".introducao").id;
+            setLastRead(currentChapterId);
+
+            // Função para salvar o capítulo atual no localStorage
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Seção salva no localStorage:", chapterId); // Log para debug
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook"; 
+            const currentChapterId = document.querySelector(".introducao").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Salva a introdução no localStorage antes de navegar
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Seção salva:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <!-- Identificação da introdução com classe "introducao" e id "introducao" -->
+    <div class="container introducao" id="introducao">
+        <h1 class="chapter-number">Sobre o Livro</h1>
+        <h2 class="chapter-title">Twilight Shadows</h2>
+        <img src="https://1drv.ms/u/c/c6efee52b9f623b4/IQRQ8F29ViH5Qq0Oi5bGW--yAVPUUaB2HoW_sDPumf4bZwk?width=1792&height=1024" alt="Capa de Twilight Shadows" class="book-cover">
+        <p>
+            Bem-vindo a <strong>Twilight Shadows</strong>, uma história que entrelaça o mistério das sombras com o brilho do amor adolescente. 
+            Nesta narrativa repleta de segredos, uma jovem descobre que o amor pode ser tão perigoso quanto irresistível, especialmente quando envolve um mundo habitado por vampiros.
+        </p>
+        <p>
+            Em um ambiente sombrio e cheio de reviravoltas, prepare-se para mergulhar em uma aventura onde escolhas difíceis, amores proibidos e a luta entre luz e trevas ditam o destino de todos.
+        </p>
+        <p>
+            Segure-se, pois esta é uma jornada onde o coração e a eternidade estão em jogo.
+        </p>
+        <div class="buttons">
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo1.html')">Iniciar</button>
+        </div>
+    </div>
+</body>
+</html>

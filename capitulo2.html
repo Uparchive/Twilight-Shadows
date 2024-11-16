@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo2">
+        <h1 class="chapter-number">Capítulo 2</h1>
+        <h2 class="chapter-title">Segredos Sob a Lua</h2>
+        <p>
+            Sophie não conseguiu dormir naquela noite. A cena na rua, o misterioso rapaz de olhos intensos, a sensação de que algo perigoso estava à espreita — tudo isso rodava em sua mente como um pesadelo interminável.
+        </p>
+        <p>
+            Na manhã seguinte, na escola, ela mal conseguia se concentrar. Os sussurros no corredor, os risos abafados, nada disso parecia importar. Havia algo muito maior acontecendo, algo que ela ainda não conseguia compreender.
+        </p>
+        <p>
+            No intervalo, Sophie sentou-se sozinha na cafeteria. A bandeja diante dela estava intacta, e seus pensamentos vagavam para o rapaz misterioso. Quem era ele? E por que ele sabia seu nome? Antes que pudesse ir mais longe em suas reflexões, uma voz familiar a tirou de seu transe.
+        </p>
+        <p>
+            “Você está bem?” Era Lily, sua melhor amiga. Sophie hesitou antes de responder. Como ela poderia explicar o que havia acontecido sem parecer louca?
+        </p>
+        <p>
+            “Só uma noite ruim,” ela disse, forçando um sorriso. Mas Lily não parecia convencida. “Você está pálida, Sophie. Se precisar falar sobre algo...” Sophie balançou a cabeça. “Estou bem, de verdade.”
+        </p>
+        <p>
+            Antes que a conversa pudesse continuar, uma comoção começou na entrada da cafeteria. Sophie virou-se para ver o motivo do burburinho e seu coração quase parou. Era ele. O rapaz da noite passada. Ele estava ali, na escola.
+        </p>
+        <p>
+            Os olhares se voltaram para ele enquanto ele caminhava pela cafeteria com uma confiança inquietante. Ele parecia deslocado, mas ao mesmo tempo, como se pertencesse àquele lugar de uma forma que ninguém mais compreendia. Quando seus olhos encontraram os de Sophie, ela sentiu o ar fugir de seus pulmões.
+        </p>
+        <p>
+            Ele caminhou até ela, ignorando os olhares curiosos ao redor. “Precisamos conversar,” ele disse, sua voz firme, mas baixa o suficiente para que apenas ela ouvisse. Sophie olhou para Lily, que parecia prestes a explodir de curiosidade, mas antes que pudesse dizer algo, o rapaz já estava puxando Sophie pelo braço.
+        </p>
+        <p>
+            Eles saíram para o pátio da escola, onde o silêncio era quase ensurdecedor. “Você não deveria ter me seguido ontem,” ele começou, seus olhos fixos nos dela. Sophie piscou, confusa. “Seguido você? Eu estava só voltando para casa!”
+        </p>
+        <p>
+            Ele suspirou, passando a mão pelos cabelos. “Eu sei. Mas agora você está envolvida em algo que não entende. Meu nome é Lucas, e... há coisas que você precisa saber. Coisas que podem colocar sua vida em risco.”
+        </p>
+        <p>
+            Sophie abriu a boca para perguntar o que ele queria dizer, mas ele a interrompeu. “Seja lá o que você faça, não saia sozinha à noite. Prometa-me isso.” Seus olhos imploravam, e embora ela não entendesse completamente a gravidade da situação, ela assentiu.
+        </p>
+        <p>
+            “Certo, Lucas,” ela disse, testando o nome em seus lábios. Ele relaxou um pouco, mas a tensão ainda era visível em seus ombros. “Obrigado,” ele disse, antes de se afastar e desaparecer pelas sombras mais uma vez.
+        </p>
+        <p>
+            Enquanto Sophie assistia ele ir embora, uma coisa ficou clara: sua vida nunca mais seria a mesma.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo1.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo3.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

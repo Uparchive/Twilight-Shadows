@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo6">
+        <h1 class="chapter-number">Capítulo 6</h1>
+        <h2 class="chapter-title">Laços de Sangue</h2>
+        <p>
+            Depois da invasão em sua casa, Sophie não conseguia dormir. As palavras de Lucas ecoavam em sua mente: “Você é mais do que eu pensei.” 
+            O colar pendurado em seu pescoço parecia mais pesado, como se carregasse um fardo invisível.
+        </p>
+        <p>
+            Na manhã seguinte, Lucas a encontrou no caminho para a escola. Ele parecia cansado, mas determinado. “Precisamos conversar,” ele disse, sem rodeios. 
+            Sophie não protestou. Ela queria respostas.
+        </p>
+        <p>
+            Eles se afastaram da multidão, indo para um parque vazio. Lá, sob as árvores, Lucas começou a explicar. 
+            “Há algo que você precisa saber, Sophie. Você não é como os outros. Há algo em seu sangue que os atrai.”
+        </p>
+        <p>
+            Sophie franziu a testa. “Meu sangue? O que isso significa?” Lucas respirou fundo antes de continuar. 
+            “Você é descendente de uma linhagem antiga, algo que muitos achavam estar extinto. Seu sangue tem o poder de fortalecer ou destruir criaturas como eu. 
+            E é por isso que eles estão atrás de você.”
+        </p>
+        <p>
+            As palavras de Lucas a deixaram tonta. “Criaturas como você? Você está falando de vampiros?” ela perguntou, 
+            sua voz tremendo. Lucas hesitou, mas finalmente assentiu. “Sim. Mas não somos todos iguais, Sophie. Alguns de nós... 
+            escolhem proteger em vez de destruir.”
+        </p>
+        <p>
+            Sophie tentou processar o que ele estava dizendo. “Então você está me protegendo por causa do meu sangue? É só isso?” 
+            Havia uma ponta de mágoa em sua voz. Lucas encontrou seu olhar, seus olhos brilhando com sinceridade. 
+            “Não. Há mais do que isso. Eu... eu não sei como explicar, mas sinto que estou conectado a você de uma forma que não consigo ignorar.”
+        </p>
+        <p>
+            Antes que ela pudesse responder, um som vindo das sombras os interrompeu. Lucas imediatamente ficou tenso, 
+            seus olhos vermelhos brilhando. “Eles nos encontraram,” ele sussurrou. “Fique atrás de mim.”
+        </p>
+        <p>
+            Duas figuras emergiram da escuridão, seus rostos pálidos e olhos famintos fixos em Sophie. 
+            “Entregue-a, Lucas,” um deles disse, sua voz baixa e ameaçadora. “Você sabe que não pode protegê-la para sempre.”
+        </p>
+        <p>
+            Lucas não respondeu. Ele se colocou entre Sophie e os intrusos, os músculos tensos como se estivesse pronto para atacar a qualquer momento. 
+            “Vocês terão que passar por mim primeiro,” ele rosnou.
+        </p>
+        <p>
+            A luta foi rápida e brutal. Lucas se movia com uma força e agilidade que Sophie mal podia acompanhar, mas os atacantes eram igualmente poderosos. 
+            Sophie agarrou o colar, sentindo sua energia pulsar, e desejou poder ajudar. De repente, a luz emanou do pingente novamente, 
+            cegando os atacantes e dando a Lucas a vantagem que ele precisava para derrotá-los.
+        </p>
+        <p>
+            Quando a poeira baixou, Lucas estava ferido, mas ainda de pé. Ele se virou para Sophie, seu rosto marcado por um misto de dor e alívio. 
+            “Você precisa aprender a usar isso,” ele disse, apontando para o colar. “É sua melhor defesa.”
+        </p>
+        <p>
+            Sophie assentiu, percebendo que não havia mais volta. Ela estava envolvida em algo muito maior do que imaginava, 
+            mas agora, com Lucas ao seu lado, estava determinada a lutar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo5.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo7.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo3">
+        <h1 class="chapter-number">Capítulo 3</h1>
+        <h2 class="chapter-title">O Baile e o Vampiro</h2>
+        <p>
+            A notícia de que haveria um baile na escola espalhou-se rapidamente, e logo todos estavam falando sobre a festa que prometia ser a melhor do ano. 
+            Sophie, no entanto, não conseguia pensar em danças, vestidos ou músicas. Sua mente estava presa em Lucas e nas palavras enigmáticas que ele havia dito.
+        </p>
+        <p>
+            “Você vai ao baile, certo?” Lily perguntou animadamente enquanto examinava catálogos de vestidos. Sophie deu de ombros. “Não sei se é o meu tipo de coisa.”
+        </p>
+        <p>
+            Lily revirou os olhos. “Ah, por favor, Sophie. Todos vão estar lá! É a oportunidade perfeita para se divertir um pouco. E quem sabe... dançar com aquele rapaz misterioso que você não para de pensar?”
+        </p>
+        <p>
+            Sophie corou violentamente. “Eu não estava pensando nele,” ela protestou, mas Lily apenas sorriu, como se soubesse mais do que dizia.
+        </p>
+        <p>
+            Na noite do baile, Sophie acabou cedendo aos apelos de Lily e vestiu um simples vestido preto. Nada chamativo, mas elegante o suficiente para a ocasião. Quando chegou ao ginásio da escola, transformado em um salão de festas com luzes e música, ela sentiu-se deslocada.
+        </p>
+        <p>
+            O ambiente estava lotado, mas Sophie não conseguia evitar a sensação de que algo estava errado. Ela olhou ao redor, procurando por um rosto familiar, e então o viu. Lucas estava lá, parado na sombra de uma das colunas, observando-a. Ele parecia fora de lugar, mas ao mesmo tempo, como se tivesse sido feito para aquele momento.
+        </p>
+        <p>
+            Ele caminhou até ela, os outros alunos parecendo desaparecer ao seu redor. “Você não deveria estar aqui,” ele disse, sua voz baixa, mas cheia de intensidade.
+        </p>
+        <p>
+            “E você?” Sophie rebateu, tentando soar corajosa. Lucas não respondeu imediatamente. Ele olhou ao redor, como se procurasse algo — ou alguém.
+        </p>
+        <p>
+            “Eles estão aqui,” ele finalmente disse. Sophie franziu a testa. “Quem?” Antes que ele pudesse responder, um grito ecoou do outro lado do salão. 
+            Todos se viraram para ver uma figura encapuzada emergir da escuridão, seus olhos brilhando com uma luz vermelha ameaçadora.
+        </p>
+        <p>
+            “Fique atrás de mim,” Lucas ordenou, colocando-se entre Sophie e a figura sombria. Ela tentou protestar, mas a seriedade em seu olhar a impediu. 
+            “Confie em mim, Sophie. Eu não vou deixar nada te acontecer.”
+        </p>
+        <p>
+            O salão mergulhou no caos enquanto Lucas enfrentava o estranho, movendo-se com uma velocidade e força que não pareciam humanas. Sophie assistiu, aterrorizada e fascinada, enquanto ele lutava para proteger todos ao seu redor.
+        </p>
+        <p>
+            Quando tudo acabou, o encapuzado desapareceu tão misteriosamente quanto havia surgido, e Lucas estava ofegante, mas ileso. Ele se virou para Sophie, seus olhos brilhando com intensidade. “Agora você entende por que eu disse para ficar longe?”
+        </p>
+        <p>
+            Sophie assentiu, mas sabia que já era tarde demais. Ela estava envolvida em algo maior do que ela mesma, e Lucas parecia ser a chave para desvendar tudo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo4.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

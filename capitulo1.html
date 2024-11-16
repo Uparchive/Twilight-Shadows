@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">O Encontro à Meia-Noite</h2>
+        <p>
+            A lua cheia iluminava a cidade adormecida, suas ruas desertas refletindo o brilho pálido de uma noite fria. 
+            Em meio ao silêncio, um som peculiar ecoou — passos rápidos, hesitantes, como se alguém estivesse correndo, mas sem destino certo.
+        </p>
+        <p>
+            Sophie apertava o casaco contra o corpo, tentando se proteger do vento cortante. Havia algo de errado naquela noite, uma sensação de ser observada que fazia seu coração bater mais rápido. 
+            Ela não sabia explicar, mas desde que saíra da biblioteca da escola, sentia que não estava sozinha.
+        </p>
+        <p>
+            Quando ela virou a esquina, um vulto se moveu rapidamente entre as sombras. Parou, congelada, enquanto seu olhar tentava discernir o que era. 
+            Então, ele apareceu. Um rapaz de olhos intensos e profundos, que brilhavam como rubis à luz da lua. Ele estava parado no final da rua, 
+            observando-a de maneira enigmática.
+        </p>
+        <p>
+            “Você não deveria estar aqui,” ele disse, sua voz baixa, mas carregada de autoridade. Sophie deu um passo para trás, sentindo o peso das palavras. 
+            “Quem é você?” ela perguntou, tentando soar confiante, mas sua voz falhou no final.
+        </p>
+        <p>
+            “Alguém que não deveria falar com você,” ele respondeu, mas não se moveu. O mistério ao redor daquele rapaz parecia envolvê-lo como um véu, e Sophie não conseguiu desviar o olhar.
+        </p>
+        <p>
+            Antes que ela pudesse dizer mais alguma coisa, um som cortante atravessou o ar. Algo estava vindo, algo que ele parecia perceber antes dela. 
+            “Saia daqui agora,” ele ordenou, dando um passo à frente, mas Sophie não conseguiu se mexer.
+        </p>
+        <p>
+            O que aconteceu depois foi um borrão. O vulto avançou, e em um piscar de olhos o rapaz estava diante dela, segurando-a pelos ombros. 
+            “Confie em mim, Sophie,” ele sussurrou. Ela não sabia como ele sabia seu nome, mas naquele momento não teve escolha a não ser obedecer.
+        </p>
+        <p>
+            Quando Sophie correu, ela olhou para trás uma última vez. O rapaz ainda estava lá, enfrentando as sombras. 
+            E ela soube que aquela noite era apenas o começo de algo que mudaria sua vida para sempre.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('introducao.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo2.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

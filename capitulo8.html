@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo8">
+        <h1 class="chapter-number">Capítulo 8</h1>
+        <h2 class="chapter-title">O Conselho das Sombras</h2>
+        <p>
+            O parque estava tomado pela escuridão, as sombras pareciam mais densas e ameaçadoras do que nunca. Sophie sentia o peso do livro antigo em suas mãos enquanto se preparava para o que quer que estivesse por vir.
+        </p>
+        <p>
+            Lucas estava parado à sua frente, seus olhos brilhando com uma intensidade que misturava determinação e algo que ela só podia descrever como desespero. “Fique perto de mim,” ele disse, sua voz firme. Sophie assentiu, mas sua mente estava tomada por um turbilhão de perguntas.
+        </p>
+        <p>
+            As figuras surgiram das sombras, uma de cada vez, formando um semicírculo ao redor deles. Diferente dos vampiros que Sophie tinha visto antes, estes exalavam uma aura de poder e controle. Eles não estavam ali para atacar imediatamente; estavam ali para julgar.
+        </p>
+        <p>
+            “Lucas,” uma voz feminina ecoou, suave, mas carregada de autoridade. “Você quebrou as regras do Conselho ao protegê-la. Sabe o que isso significa?”
+        </p>
+        <p>
+            Lucas deu um passo à frente, sua postura desafiadora. “Ela não é uma ameaça para vocês. Pelo contrário, ela pode ser a chave para acabar com isso tudo.”
+        </p>
+        <p>
+            A mulher sorriu, mas havia algo de cruel em sua expressão. “Você realmente acredita nisso? Ou está cego pelo seu apego a ela?” Sophie sentiu seu rosto corar, mas manteve-se firme, observando enquanto Lucas enfrentava a mulher com um olhar intenso.
+        </p>
+        <p>
+            Outro membro do Conselho, um homem alto e magro, interveio. “A questão não é se ela é uma ameaça agora, mas o que ela pode se tornar. O poder que ela carrega é imprevisível e perigoso. Nós não podemos arriscar.”
+        </p>
+        <p>
+            Sophie finalmente encontrou sua voz. “Eu estou aqui. Por que não me perguntam o que eu quero? Por que não me dão a chance de provar que não sou o que vocês temem?”
+        </p>
+        <p>
+            As palavras dela fizeram o círculo vacilar. A mulher arqueou uma sobrancelha, claramente surpresa pela ousadia de Sophie. “Você não entende o que está pedindo, criança,” ela disse. “Este não é um jogo.”
+        </p>
+        <p>
+            “Eu sei,” Sophie respondeu, sua voz firme. “Mas se minha linhagem é tão importante quanto vocês dizem, então eu mereço uma chance de lutar por mim mesma.”
+        </p>
+        <p>
+            Lucas olhou para Sophie, surpreso e, de certa forma, orgulhoso. O Conselho murmurava entre si, claramente dividido sobre como proceder. Finalmente, a mulher ergueu a mão, silenciando os demais.
+        </p>
+        <p>
+            “Muito bem,” ela disse. “Você terá sua chance. Mas saiba disso: o caminho que está escolhendo é perigoso. E se falhar, não haverá piedade.”
+        </p>
+        <p>
+            Sophie sentiu um calafrio percorrer sua espinha, mas assentiu. “Eu aceito.”
+        </p>
+        <p>
+            O Conselho começou a recuar para as sombras, mas antes de desaparecer completamente, a mulher se voltou para Lucas. “Você está jogando um jogo perigoso, Lucas. Espero que ela valha o risco.”
+        </p>
+        <p>
+            Quando eles ficaram sozinhos novamente, Lucas se aproximou de Sophie. “Você sabe o que acabou de fazer?” ele perguntou, sua voz carregada de preocupação. Sophie encontrou seu olhar. “Eu escolhi lutar. E você vai me ajudar.”
+        </p>
+        <p>
+            Lucas suspirou, mas havia um brilho de admiração em seus olhos. “Sempre.”
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo7.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo9.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

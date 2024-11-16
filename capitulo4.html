@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo4">
+        <h1 class="chapter-number">Capítulo 4</h1>
+        <h2 class="chapter-title">O Colar da Verdade</h2>
+        <p>
+            Na manhã seguinte ao baile, Sophie não conseguia afastar os pensamentos sobre o que havia acontecido. A imagem de Lucas enfrentando o encapuzado permanecia gravada em sua mente. Quem era aquele estranho? E, mais importante, o que Lucas estava escondendo?
+        </p>
+        <p>
+            Quando Sophie chegou à escola, encontrou Lily à sua espera no portão. “Você desapareceu ontem à noite! O que aconteceu?” Lily perguntou, cruzando os braços. Sophie hesitou, buscando as palavras certas. “Eu... não me senti bem e fui embora.”
+        </p>
+        <p>
+            “Estranho,” Lily comentou, mas não pressionou mais. Ainda assim, Sophie sentia que sua amiga estava desconfiada. Ela sabia que Lily não acreditaria na verdade — nem ela mesma acreditava totalmente.
+        </p>
+        <p>
+            Durante a aula, Sophie encontrou algo estranho em sua mochila. Era um pequeno pacote envolto em um pano preto. Confusa, ela olhou ao redor, mas ninguém parecia ter notado nada. Abrindo-o cuidadosamente, encontrou um colar com um pingente prateado, no formato de uma lua crescente. Havia algo incrivelmente hipnotizante naquele objeto.
+        </p>
+        <p>
+            Junto ao colar, havia uma pequena nota escrita em uma caligrafia elegante: “Use-o. Ele te protegerá. – L.”
+        </p>
+        <p>
+            Sophie sabia que era de Lucas. Mas proteger do quê? Ela sentiu um arrepio percorrer sua espinha enquanto colocava o colar. Assim que o pingente tocou sua pele, uma estranha sensação de calma a envolveu, como se uma força invisível a estivesse protegendo.
+        </p>
+        <p>
+            Mais tarde, no intervalo, Lucas apareceu novamente. Desta vez, ele parecia ainda mais reservado. “Você recebeu o colar?” ele perguntou, sua voz baixa e firme. Sophie assentiu. “O que isso significa? O que está acontecendo, Lucas?”
+        </p>
+        <p>
+            Ele olhou ao redor antes de responder. “Aquele que você viu ontem não foi o último. Existem outros, e eles estão atrás de você. Esse colar vai te ajudar a se proteger. Mas você precisa confiar em mim, Sophie. Não conte a ninguém sobre isso, nem mesmo à sua amiga.”
+        </p>
+        <p>
+            Sophie queria fazer mais perguntas, mas antes que pudesse, Lucas se afastou novamente, deixando-a sozinha com mais dúvidas do que respostas. Ela olhou para o pingente, sentindo seu peso, e percebeu que sua vida estava se tornando cada vez mais perigosa e misteriosa.
+        </p>
+        <p>
+            Naquela noite, enquanto olhava para o céu pela janela de seu quarto, Sophie percebeu que o colar brilhava suavemente sob a luz da lua. Era como se estivesse vivo, pulsando com uma energia própria. Ela sabia que estava entrando em um mundo que não entendia, mas não podia mais voltar atrás.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo3.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo5.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

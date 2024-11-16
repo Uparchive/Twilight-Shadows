@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo7">
+        <h1 class="chapter-number">Capítulo 7</h1>
+        <h2 class="chapter-title">Amores Proibidos</h2>
+        <p>
+            Depois da batalha no parque, Sophie sentia que sua vida estava em um turbilhão. Ela sabia que precisava de respostas e, mais importante, precisava aprender a se proteger.
+            Lucas insistia para que ela ficasse em casa, mas Sophie sabia que, enquanto não entendesse o poder que carregava, não estaria segura em lugar algum.
+        </p>
+        <p>
+            Na escola, a atmosfera era diferente. Sophie percebia os olhares em sua direção, mas não eram apenas os olhares curiosos dos colegas. Ela sentia algo mais, como se estivesse sendo observada de uma maneira mais intensa, mais ameaçadora.
+        </p>
+        <p>
+            Lily, sempre perceptiva, finalmente decidiu confrontá-la. “Sophie, algo está acontecendo. Você anda diferente, distante. E não adianta tentar me enganar. Quem é esse tal de Lucas?” A pergunta pegou Sophie de surpresa.
+        </p>
+        <p>
+            “Ele é só... alguém que está me ajudando,” Sophie respondeu, mas sua voz tremia. Lily estreitou os olhos. “Ajudando com o quê? Você não me conta nada ultimamente!”
+        </p>
+        <p>
+            Sophie queria contar a verdade, queria dividir o peso que sentia nos ombros. Mas as palavras de Lucas ecoavam em sua mente: “Não confie em ninguém.” Ela sabia que envolver Lily só a colocaria em perigo.
+        </p>
+        <p>
+            Naquela noite, Lucas a encontrou no mesmo parque, como haviam combinado. Ele estava carregando um pequeno livro antigo, com páginas amareladas e uma capa desgastada. “Este é o seu legado,” ele disse, entregando o livro a Sophie.
+        </p>
+        <p>
+            “Meu legado?” ela perguntou, abrindo o livro. Ele estava escrito em uma língua que ela não entendia, mas as imagens e símbolos eram familiares — o colar, a lua, e um símbolo que ela reconheceu em um sonho recente.
+        </p>
+        <p>
+            “Sua linhagem,” Lucas explicou. “Este livro explica quem você é e o que pode fazer. Mas você precisa aprender a lê-lo. Há segredos aqui que podem salvar sua vida — e talvez a minha também.”
+        </p>
+        <p>
+            Sophie olhou para Lucas, sua expressão séria. “Por que está me ajudando? Qual é a sua verdadeira intenção?” Lucas hesitou, e por um momento, Sophie pensou que ele não responderia. Mas então, ele falou.
+        </p>
+        <p>
+            “Porque você significa algo para mim. Algo que eu não consigo ignorar. Meu mundo é feito de escuridão, Sophie. Mas você... você é a única luz que já vi.” 
+            As palavras o pegaram de surpresa tanto quanto a ela, mas ele não desviou o olhar.
+        </p>
+        <p>
+            Sophie sentiu seu coração acelerar, mas antes que pudesse responder, um som cortante ecoou pelo parque. Lucas imediatamente ficou em alerta. 
+            “Eles estão aqui,” ele sussurrou, colocando-se entre ela e a escuridão.
+        </p>
+        <p>
+            As sombras começaram a se mover, e Sophie soube que a batalha estava longe de terminar. Mas, desta vez, ela não estava disposta a apenas assistir.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo6.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo8.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

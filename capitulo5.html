@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo5">
+        <h1 class="chapter-number">Capítulo 5</h1>
+        <h2 class="chapter-title">A Primeira Mordida</h2>
+        <p>
+            A noite caiu sobre a cidade, trazendo com ela um silêncio inquietante. Sophie, ainda abalada pelas revelações recentes, não conseguia evitar a sensação de que algo estava prestes a acontecer.
+        </p>
+        <p>
+            Enquanto observava o colar brilhando em seu pescoço, um som vindo da janela chamou sua atenção. Relutante, ela abriu a cortina e encontrou Lucas do lado de fora, seus olhos vermelhos brilhando na escuridão.
+        </p>
+        <p>
+            “Precisamos conversar,” ele disse, sua voz carregada de urgência. Sophie hesitou por um momento, mas acabou abrindo a janela. Lucas entrou com a graça de um predador, seus movimentos rápidos e precisos.
+        </p>
+        <p>
+            “O que está acontecendo, Lucas? Por que eu? O que esses... outros querem de mim?” Sophie perguntou, sua voz um misto de medo e determinação.
+        </p>
+        <p>
+            Lucas suspirou, passando a mão pelos cabelos. “Você é especial, Sophie. Há algo em você que eles desejam, algo que pode mudar tudo. Mas ainda não sei o que é.” Ele parecia frustrado, como se estivesse lutando contra suas próprias limitações.
+        </p>
+        <p>
+            Antes que Sophie pudesse responder, um barulho vindo do andar de baixo os interrompeu. Lucas imediatamente ficou alerta, seus olhos brilhando mais intensamente. “Eles estão aqui,” ele sussurrou.
+        </p>
+        <p>
+            O tempo parecia desacelerar enquanto Lucas a puxava para perto. “Fique atrás de mim. Não importa o que aconteça, não se mexa.” Sophie assentiu, incapaz de falar, enquanto o medo apertava seu peito.
+        </p>
+        <p>
+            A porta do quarto se abriu com um estrondo, revelando uma figura encapuzada, similar à do baile. Mas desta vez, ele não estava sozinho. Outros dois o acompanhavam, seus olhos brilhando com a mesma luz vermelha ameaçadora.
+        </p>
+        <p>
+            Lucas avançou contra eles, seus movimentos tão rápidos que Sophie mal podia acompanhar. O quarto se transformou em um campo de batalha, com móveis sendo destruídos enquanto Lucas enfrentava os intrusos. Mas mesmo ele, com toda a sua força, parecia estar em desvantagem.
+        </p>
+        <p>
+            Quando um dos atacantes avançou em direção a Sophie, ela instintivamente ergueu o colar. Para sua surpresa, uma luz intensa emanou do pingente, lançando o atacante para trás. Lucas aproveitou a distração para eliminar os dois restantes, mas o último conseguiu escapar.
+        </p>
+        <p>
+            Ofegante, Lucas se virou para Sophie, seu rosto marcado pela exaustão. “Você salvou minha vida,” ele disse, sua voz carregada de surpresa e algo mais — admiração.
+        </p>
+        <p>
+            Sophie, ainda tremendo, olhou para o colar. “O que é isso?” ela perguntou. Lucas balançou a cabeça. “É mais do que eu pensei. Você é mais do que eu pensei.” Seus olhos encontraram os dela, e pela primeira vez, Sophie viu algo que parecia ser medo.
+        </p>
+        <p>
+            Naquela noite, enquanto Lucas desaparecia na escuridão, Sophie percebeu que a batalha estava apenas começando. E agora, ela sabia que estava no centro de tudo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo6.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

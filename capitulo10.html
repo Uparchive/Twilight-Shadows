@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo10">
+        <h1 class="chapter-number">Capítulo 10</h1>
+        <h2 class="chapter-title">O Primeiro Sacrifício</h2>
+        <p>
+            O silêncio da floresta parecia mais profundo naquela manhã. Sophie ainda sentia a excitação de seu progresso com o colar, mas a expressão sombria de Lucas era um lembrete constante de que os perigos estavam longe de terminar.
+        </p>
+        <p>
+            “Temos que sair daqui,” ele disse enquanto recolhia seus pertences. “Eles sabem onde estamos, e não vão parar até te encontrar.”
+        </p>
+        <p>
+            Sophie observava Lucas enquanto ele se preparava. “Para onde vamos?” ela perguntou, tentando esconder a ansiedade em sua voz. Lucas olhou para ela, sua expressão séria. “Para onde eles não esperariam. Mas será perigoso, Sophie. Precisamos de aliados.”
+        </p>
+        <p>
+            Eles partiram antes do amanhecer, movendo-se rapidamente pela floresta. Lucas explicou que havia um pequeno grupo de vampiros que se opunham ao Conselho — rebeldes que acreditavam em um equilíbrio entre os humanos e os seus. “Eles podem nos ajudar,” ele disse. “Mas eles não confiam em ninguém.”
+        </p>
+        <p>
+            A jornada foi longa e exaustiva, mas ao cair da noite, eles chegaram a um antigo santuário escondido nas montanhas. O local era sombrio e imponente, com símbolos gravados nas paredes que Sophie reconheceu do livro antigo.
+        </p>
+        <p>
+            “Espere aqui,” Lucas disse, antes de entrar no santuário. Sophie obedeceu, mas não pôde evitar sentir um arrepio percorrer sua espinha enquanto olhava ao redor.
+        </p>
+        <p>
+            Minutos depois, Lucas retornou acompanhado por três figuras. Uma mulher alta e elegante liderava o grupo, seus olhos brilhando com uma luz dourada incomum. “Então esta é a garota,” ela disse, sua voz baixa, mas carregada de poder. “Aquela que carrega o colar.”
+        </p>
+        <p>
+            Sophie deu um passo à frente, tentando parecer confiante. “Sou eu. E preciso de ajuda.” A mulher estudou Sophie por um momento antes de falar. “Você é corajosa, pelo menos. Mas coragem não será suficiente.”
+        </p>
+        <p>
+            O grupo passou a noite discutindo estratégias, e Sophie percebeu que a batalha contra o Conselho era muito maior do que imaginava. Os rebeldes estavam lutando por sua própria sobrevivência, e Sophie agora era uma peça central em seus planos.
+        </p>
+        <p>
+            Quando o amanhecer estava próximo, a líder dos rebeldes se aproximou de Sophie. “Há algo que você precisa entender,” ela disse. “Se decidir lutar, haverá sacrifícios. Pessoas que você ama podem se perder. Está disposta a carregar esse peso?”
+        </p>
+        <p>
+            Sophie olhou para Lucas, que estava parado à distância, observando-a com uma intensidade que ela não podia ignorar. Ela respirou fundo antes de responder. “Sim. Estou disposta.”
+        </p>
+        <p>
+            A líder assentiu, mas seus olhos estavam cheios de gravidade. “Então prepare-se, Sophie. Porque o primeiro sacrifício está mais próximo do que você imagina.”
+        </p>
+        <p>
+            Naquela noite, Sophie sentiu o peso de sua decisão. Mas ela sabia que não havia outra escolha. A batalha estava apenas começando, e ela estava pronta para enfrentar o que viesse — mesmo que isso significasse perder tudo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo9.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo9">
+        <h1 class="chapter-number">Capítulo 9</h1>
+        <h2 class="chapter-title">Promessas Eternas</h2>
+        <p>
+            Após a intensa reunião com o Conselho das Sombras, Sophie e Lucas estavam de volta ao refúgio temporário que ele havia encontrado: uma cabana isolada na floresta. A atmosfera estava carregada de tensão, mas também de determinação.
+        </p>
+        <p>
+            Sophie não conseguia tirar da cabeça o olhar da líder do Conselho, que parecia pesar cada palavra dita. “Eles têm medo de mim,” ela sussurrou para Lucas, que estava sentado perto da lareira, observando as chamas.
+        </p>
+        <p>
+            “Não só de você,” ele respondeu, sem desviar o olhar do fogo. “Eles têm medo do que você representa. Seu poder, sua linhagem, pode mudar tudo o que eles conhecem. E mudança é algo que o Conselho teme acima de tudo.”
+        </p>
+        <p>
+            Sophie passou os dedos pelo colar, sentindo a energia pulsante que vinha do pingente. “Mas eu não sei como usar isso. Como posso lutar se nem sei do que sou capaz?”
+        </p>
+        <p>
+            Lucas se levantou, cruzando o espaço entre eles em poucos passos. “É para isso que estou aqui. Eu prometi que te ajudaria, e vou cumprir essa promessa. Não importa o que aconteça.”
+        </p>
+        <p>
+            Ele estendeu a mão para Sophie, que hesitou antes de segurá-la. “Confie em mim,” ele disse, olhando profundamente em seus olhos. Sophie assentiu, sentindo uma conexão inexplicável que parecia além das palavras.
+        </p>
+        <p>
+            Naquela noite, Lucas começou a ensinar Sophie a controlar o poder do colar. Ele explicou que a energia do pingente respondia não apenas à sua vontade, mas também às suas emoções. “É uma extensão de você,” ele disse. “Quanto mais confiante você estiver, mais forte será o poder.”
+        </p>
+        <p>
+            As primeiras tentativas foram desastrosas, com o pingente emitindo apenas faíscas ou nenhuma reação. Mas Lucas era paciente, encorajando Sophie a continuar tentando. “Não é sobre força bruta,” ele disse. “É sobre equilíbrio.”
+        </p>
+        <p>
+            Quando o amanhecer começou a surgir, Sophie conseguiu produzir um raio de luz consistente do pingente, iluminando todo o interior da cabana. Ela riu, sentindo uma alegria que não sentia há dias. “Eu consegui!” exclamou.
+        </p>
+        <p>
+            Lucas sorriu, mas havia algo em seus olhos que Sophie não conseguia decifrar. “É só o começo,” ele disse. “Mas foi um grande passo.”
+        </p>
+        <p>
+            Antes de se afastar, ele colocou a mão no ombro de Sophie. “Lembre-se, Sophie: a luz que você carrega é mais poderosa do que qualquer escuridão que possamos enfrentar. Não deixe ninguém te fazer esquecer disso.”
+        </p>
+        <p>
+            Sophie sentiu o calor de suas palavras e percebeu que, mesmo com todos os perigos que enfrentariam, ela não estava sozinha. E, pela primeira vez desde que tudo começara, ela sentiu que talvez, só talvez, estivesse pronta para lutar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo8.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo10.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
