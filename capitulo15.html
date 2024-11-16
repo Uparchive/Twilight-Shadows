@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 15</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo15">
+        <h1 class="chapter-number">Capítulo 15</h1>
+        <h2 class="chapter-title">O Preço do Poder</h2>
+        <p>
+            A manhã seguinte trouxe uma nova energia ao santuário. Althea convocou Sophie para um treinamento avançado, alertando-a de que o poder do colar era um presente, mas também uma maldição.
+        </p>
+        <p>
+            “O colar responde à sua força interior,” Althea explicou, enquanto Sophie se posicionava no centro do círculo marcado com runas. “Mas cada uso vem com um custo. Ele se alimenta de sua essência, de sua vitalidade. Quanto mais você usar, maior será o preço.”
+        </p>
+        <p>
+            Sophie engoliu em seco. Ela já sentia o peso do colar, mas não imaginava que estava sacrificando partes de si mesma ao usá-lo. “E se eu não conseguir lidar com isso?” ela perguntou, sua voz tremendo.
+        </p>
+        <p>
+            Althea a observou com intensidade. “Então o colar a consumirá.”
+        </p>
+        <p>
+            Lucas, que assistia de longe, deu um passo à frente. “Não podemos apenas treiná-la sem limites. Ela precisa descansar, ou o poder acabará matando-a.” Mas Althea balançou a cabeça. “Ela precisa conhecer seus limites. É melhor aprender isso agora do que em meio a uma batalha.”
+        </p>
+        <p>
+            O treinamento começou. Sophie foi instruída a canalizar a energia do colar para criar barreiras de proteção. Cada tentativa drenava sua força, mas ela perseverava. A certa altura, suas pernas cederam, e Lucas correu para segurá-la.
+        </p>
+        <p>
+            “Chega por hoje,” ele disse, sua voz firme. Mas Sophie balançou a cabeça. “Não. Preciso continuar. Preciso estar pronta.”
+        </p>
+        <p>
+            Relutante, Lucas a ajudou a se levantar, e Sophie voltou ao círculo. Desta vez, ela conseguiu criar uma barreira luminosa que cercou todo o espaço, mas quando o efeito desapareceu, ela caiu de joelhos, ofegante.
+        </p>
+        <p>
+            “Isso é o suficiente,” Althea disse, sua voz mais suave agora. “Você provou que tem força. Mas lembre-se, Sophie: o poder não é um fim em si mesmo. Ele deve ser usado com sabedoria.”
+        </p>
+        <p>
+            Naquela noite, enquanto Lucas cuidava de seus ferimentos, Sophie refletiu sobre as palavras de Althea. O colar era mais do que uma arma — era uma parte dela, algo que precisava entender e respeitar.
+        </p>
+        <p>
+            “Você é mais forte do que pensa,” Lucas disse, quebrando o silêncio. “Mas não precisa carregar esse peso sozinha.”
+        </p>
+        <p>
+            Sophie olhou para ele, sentindo uma mistura de gratidão e algo mais profundo que ela não conseguia definir. “Obrigada,” ela sussurrou, antes de finalmente deixar o cansaço levá-la ao sono.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo14.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo16.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

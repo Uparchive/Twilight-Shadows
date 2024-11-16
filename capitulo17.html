@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 17</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo17">
+        <h1 class="chapter-number">Capítulo 17</h1>
+        <h2 class="chapter-title">O Teste dos Guardiões</h2>
+        <p>
+            Sophie seguiu o guardião pelas profundezas do santuário. As paredes brilhavam com runas antigas, e o ar estava impregnado de uma energia que fazia o colar em seu pescoço pulsar em sintonia com seus batimentos cardíacos.
+        </p>
+        <p>
+            “O teste não é apenas sobre força,” o guardião explicou enquanto caminhavam. “Ele busca sua verdade interior, sua capacidade de enfrentar quem você realmente é. Poucos sobrevivem ilesos.”
+        </p>
+        <p>
+            Eles chegaram a uma câmara circular. No centro, havia um espelho de cristal flutuando, sua superfície líquida ondulando levemente. O guardião parou na entrada, gesticulando para que Sophie avançasse. “Entre e encare sua própria alma.”
+        </p>
+        <p>
+            Sophie hesitou, olhando para Lucas, que a observava de longe. Seus olhos brilhavam com preocupação, mas ele não disse nada. Respirando fundo, ela deu o primeiro passo em direção ao espelho.
+        </p>
+        <p>
+            Assim que o tocou, foi engolida por uma luz intensa. Quando abriu os olhos novamente, estava em um espaço vazio, como um vasto oceano de escuridão e luz. No centro, uma figura surgiu — ela mesma, mas diferente. Esta Sophie tinha olhos brilhantes como o colar e uma aura de poder assustadora.
+        </p>
+        <p>
+            “Quem é você?” Sophie perguntou, tentando manter a calma. A figura sorriu, uma expressão cheia de arrogância. “Eu sou o que você teme se tornar. Eu sou a versão de você que cede ao poder sem pensar no custo.”
+        </p>
+        <p>
+            A figura avançou, sua presença esmagadora. “Você acha que pode carregar esse colar sem pagar o preço? Você acha que pode salvar todos sem perder partes de si mesma? Você é fraca, Sophie. E fraqueza não sobrevive.”
+        </p>
+        <p>
+            Sophie sentiu a raiva crescer dentro de si. “Você está errada. Fraqueza não é o que define quem eu sou. Minha força está em não desistir, mesmo quando tudo parece impossível.”
+        </p>
+        <p>
+            A figura riu, o som ecoando pelo vazio. “Então prove. Mostre que pode me enfrentar.” Em um instante, ela atacou, e Sophie foi jogada para trás pela força do impacto. Mas em vez de recuar, ela se levantou.
+        </p>
+        <p>
+            Usando o poder do colar, Sophie criou uma barreira de luz que bloqueou o próximo ataque. “Eu não vou ser definida pelo medo,” ela disse, sua voz firme. “Nem por você.”
+        </p>
+        <p>
+            Com um esforço final, Sophie canalizou toda sua energia no colar, criando uma explosão de luz que consumiu a figura. Quando a escuridão dissipou, ela estava de volta à câmara, de joelhos, mas intacta.
+        </p>
+        <p>
+            O guardião se aproximou, sua expressão grave, mas respeitosa. “Você passou. Mas lembre-se, Sophie: este foi apenas o primeiro de muitos testes. O verdadeiro desafio ainda está por vir.”
+        </p>
+        <p>
+            Enquanto ela saía da câmara, Lucas correu para ajudá-la. “Você está bem?” ele perguntou, segurando-a pelos ombros. Sophie assentiu, exausta, mas determinada. “Sim. Estou pronta para o que vier.”
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo16.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo18.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

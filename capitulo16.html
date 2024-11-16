@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 16</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo16">
+        <h1 class="chapter-number">Capítulo 16</h1>
+        <h2 class="chapter-title">O Santuário Oculto</h2>
+        <p>
+            A manhã trouxe um ar de mistério ao grupo enquanto Althea anunciava que eles precisavam deixar o atual refúgio. “Estamos vulneráveis aqui,” ela disse, sua voz firme. “Há um lugar mais seguro. Um santuário que poucos conhecem.”
+        </p>
+        <p>
+            Sophie sentiu um misto de curiosidade e preocupação. “Que lugar é esse?” ela perguntou. Althea hesitou antes de responder. “Um santuário construído pelos primeiros rebeldes, longe do alcance do Conselho. Mas a jornada será difícil.”
+        </p>
+        <p>
+            O grupo partiu ao amanhecer, seguindo Althea por uma trilha que parecia levar ao coração da floresta. O caminho era estreito e cercado por árvores que pareciam crescer mais altas e densas a cada passo. Lucas manteve-se próximo de Sophie, sua presença trazendo um conforto silencioso.
+        </p>
+        <p>
+            Após horas de caminhada, eles chegaram a uma entrada escondida entre as rochas. Althea tocou um símbolo gravado na pedra, e a entrada se abriu lentamente, revelando uma passagem iluminada por uma luz dourada.
+        </p>
+        <p>
+            “Bem-vindos ao Santuário Oculto,” Althea disse enquanto o grupo entrava. O interior era impressionante, com paredes adornadas com símbolos antigos e cristais que brilhavam suavemente. O ar estava carregado de energia, e Sophie sentiu o colar reagir imediatamente, emitindo um leve calor.
+        </p>
+        <p>
+            “Este lugar é protegido por antigas magias,” Althea explicou. “Aqui, o Conselho não pode nos encontrar. Mas também é um lugar de aprendizado e teste. Aqueles que entram devem provar que são dignos.”
+        </p>
+        <p>
+            Antes que Sophie pudesse perguntar o que isso significava, uma voz profunda ecoou pelo salão. “Quem ousa entrar no santuário dos guardiões?” A figura de um homem idoso, com olhos que pareciam conter séculos de sabedoria, surgiu de uma passagem lateral.
+        </p>
+        <p>
+            Althea fez uma reverência. “É Althea, acompanhada de aliados que buscam proteção e conhecimento.” O homem estudou cada um deles antes de fixar seu olhar em Sophie. “Você carrega o colar,” ele disse, sua voz carregada de reverência e gravidade. “Mas será que você entende o que isso significa?”
+        </p>
+        <p>
+            Sophie sentiu o peso do olhar do homem, mas manteve-se firme. “Estou aprendendo,” ela respondeu. “E farei o que for preciso para protegê-lo e usá-lo com sabedoria.”
+        </p>
+        <p>
+            O homem assentiu lentamente. “Então será testada. O santuário revelará seus medos mais profundos e sua verdadeira força. Somente aqueles que enfrentam a si mesmos podem avançar.” Ele se afastou, gesticulando para que ela o seguisse.
+        </p>
+        <p>
+            Sophie olhou para Lucas e Althea, que a encorajaram com pequenos acenos. Com o coração acelerado, ela seguiu o homem pelas profundezas do santuário, onde sabia que enfrentaria desafios que poderiam mudar tudo.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo15.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo17.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

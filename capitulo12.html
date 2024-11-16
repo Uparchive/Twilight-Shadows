@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 12</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo12">
+        <h1 class="chapter-number">Capítulo 12</h1>
+        <h2 class="chapter-title">A Primeira Visão</h2>
+        <p>
+            O dia havia começado com uma sensação de urgência. Althea insistiu que Sophie precisava continuar treinando, mas dessa vez, ela não estaria apenas aprendendo a controlar o colar — ela precisaria usá-lo para acessar o que chamavam de "As Visões do Sangue".
+        </p>
+        <p>
+            “Elas são fragmentos do futuro, peças de um quebra-cabeça que apenas você pode montar,” explicou Althea, colocando uma pequena tigela cheia de um líquido escuro e espesso na frente de Sophie. “Mas cuidado: nem tudo o que verá será o que parece.”
+        </p>
+        <p>
+            Sophie olhou para Lucas, buscando alguma forma de apoio. Ele assentiu levemente, encorajando-a. “Você consegue,” ele disse. “Confie no colar, e confie em você mesma.”
+        </p>
+        <p>
+            Com um suspiro profundo, Sophie mergulhou os dedos no líquido e tocou o pingente do colar. Uma onda de calor percorreu seu corpo, e sua visão escureceu. Quando abriu os olhos novamente, estava em outro lugar.
+        </p>
+        <p>
+            O cenário ao seu redor era de destruição. A terra estava rachada, e o céu vermelho como sangue. No horizonte, figuras sombrias marchavam, lideradas por uma figura que parecia vagamente familiar. Sophie tentou se aproximar, mas sua visão foi interrompida por uma explosão de luz.
+        </p>
+        <p>
+            Agora ela estava em um grande salão, cercada pelo Conselho das Sombras. Eles estavam discutindo algo, mas as palavras eram difíceis de entender. A única coisa que Sophie conseguiu captar foi o nome dela. “Ela é a chave,” uma voz grave ecoou. “Mas também pode ser nossa destruição.”
+        </p>
+        <p>
+            A visão mudou novamente, mostrando Lucas enfrentando uma figura encapuzada. Sophie tentou gritar para avisá-lo, mas sua voz não saía. Ela assistiu, impotente, enquanto Lucas era atingido e caía, sangrando no chão.
+        </p>
+        <p>
+            Sophie foi arrancada da visão com um grito. Lucas estava ao seu lado, segurando seus ombros. “Sophie, o que você viu?” ele perguntou, sua voz cheia de preocupação.
+        </p>
+        <p>
+            Ela estava tremendo, mas conseguiu responder. “Eu vi... destruição. O Conselho está planejando algo, e você... você estava em perigo.” Sua voz falhou, mas Lucas apertou suas mãos com firmeza.
+        </p>
+        <p>
+            “É apenas uma visão,” disse Althea, tentando acalmá-la. “O futuro ainda não está escrito. O que você viu é apenas uma possibilidade. Cabe a nós mudá-lo.”
+        </p>
+        <p>
+            Sophie assentiu, mas as imagens continuavam a atormentá-la. Ela sabia que precisava agir, e rápido. O tempo estava se esgotando, e o peso de seu destino nunca havia parecido tão esmagador.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo11.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo13.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

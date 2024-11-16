@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 14</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo14">
+        <h1 class="chapter-number">Capítulo 14</h1>
+        <h2 class="chapter-title">Memórias do Passado</h2>
+        <p>
+            A noite no santuário estava mais calma depois da revelação de Darius, mas a atmosfera permanecia tensa. Sophie, incapaz de dormir, encontrou Lucas sentado na entrada do santuário, observando as estrelas.
+        </p>
+        <p>
+            “Não consegue dormir também?” ela perguntou, sentando-se ao lado dele. Lucas balançou a cabeça. “Muitas coisas na minha mente,” ele respondeu, sua voz baixa e pensativa.
+        </p>
+        <p>
+            Por um momento, nenhum dos dois disse nada. Então, Sophie quebrou o silêncio. “Você nunca fala sobre o seu passado. Por quê?”
+        </p>
+        <p>
+            Lucas ficou em silêncio por um instante antes de responder. “Porque há partes do meu passado que eu gostaria de esquecer. Coisas que fiz... coisas que não posso desfazer.”
+        </p>
+        <p>
+            Sophie olhou para ele, esperando que continuasse. Finalmente, ele cedeu. “Eu nem sempre fui assim,” ele começou. “Houve um tempo em que eu acreditava que podia ser mais do que uma criatura da noite. Mas... fui consumido pela sede de poder. Fiz coisas que me assombram até hoje.”
+        </p>
+        <p>
+            Ele respirou fundo antes de continuar. “Eu fazia parte do Conselho das Sombras. Não como um líder, mas como alguém que acreditava na ordem deles. Eu achava que, ao seguir suas regras, estava fazendo o que era certo para minha espécie. Mas então vi o que eles realmente eram — manipuladores, assassinos. Pessoas como você eram apenas ferramentas para eles.”
+        </p>
+        <p>
+            Sophie sentiu um arrepio. “O que aconteceu depois?”
+        </p>
+        <p>
+            Lucas olhou para as estrelas, como se estivesse buscando respostas no céu. “Eu fugi. Mas eles não deixam ninguém sair facilmente. Passei anos sendo caçado, sobrevivendo de forma precária. Até que conheci alguém... alguém que me mostrou que ainda havia esperança.”
+        </p>
+        <p>
+            “Quem era?” Sophie perguntou, sua curiosidade crescendo. Mas Lucas desviou o olhar, sua expressão se fechando. “Alguém que perdi por causa das minhas escolhas.”
+        </p>
+        <p>
+            O silêncio caiu entre eles novamente, mas Sophie sentiu que havia algo mais que ele não estava dizendo. Antes que pudesse perguntar, Lucas se levantou. “Precisamos descansar. O Conselho não vai nos dar muito tempo.”
+        </p>
+        <p>
+            Sophie ficou onde estava, olhando para o lugar onde Lucas estivera sentado. Pela primeira vez, ela percebeu que, apesar de sua força e confiança, Lucas carregava um peso que ninguém podia ver. E, de certa forma, isso o tornava ainda mais humano.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo13.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo15.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

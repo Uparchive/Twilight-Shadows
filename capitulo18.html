@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 18</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo18">
+        <h1 class="chapter-number">Capítulo 18</h1>
+        <h2 class="chapter-title">O Elo Perdido</h2>
+        <p>
+            O santuário estava silencioso enquanto Sophie recuperava suas forças após o teste. Lucas permaneceu ao seu lado, atento a qualquer sinal de perigo. Embora ela tivesse superado o desafio, algo em sua expressão indicava que ainda havia muito a processar.
+        </p>
+        <p>
+            Althea entrou na câmara, acompanhada pelo guardião. Sua expressão era séria, mas havia um brilho de aprovação em seus olhos. “Você enfrentou seu reflexo e venceu,” disse Althea. “Mas agora, deve compreender o que significa carregar este fardo.”
+        </p>
+        <p>
+            Sophie franziu a testa. “O que mais há para saber? O colar já me mostrou do que sou capaz, e o preço que ele exige.”
+        </p>
+        <p>
+            O guardião ergueu uma mão para silenciá-la. “O colar não é apenas uma arma ou um símbolo de poder. Ele é um elo. Um fragmento de algo muito maior.” Ele gesticulou para uma parede coberta de símbolos antigos. “Os primeiros guardiões criaram o colar como parte de um conjunto. Existem outros artefatos, cada um com um propósito único. Juntos, eles formam a chave para equilibrar nosso mundo.”
+        </p>
+        <p>
+            Sophie sentiu um arrepio percorrer sua espinha. “Está dizendo que há outros como este?” ela perguntou, segurando o colar. O guardião assentiu. “Sim. Mas muitos foram perdidos ao longo dos séculos. Encontrá-los será a única forma de derrotar o Conselho das Sombras e restaurar a ordem.”
+        </p>
+        <p>
+            Lucas cruzou os braços, seu olhar desconfiado. “Se são tão importantes, por que ninguém os protegeu?” O guardião suspirou. “Porque o poder corrompe. Aqueles que deveriam proteger os artefatos foram consumidos pela ganância ou destruídos pelo Conselho. Agora, o destino deles está nas mãos de Sophie.”
+        </p>
+        <p>
+            Sophie sentiu o peso de suas palavras. “Como vou encontrá-los? Nem sei por onde começar.” Althea colocou uma mão em seu ombro. “O colar mostrará o caminho, mas você precisará estar preparada. Cada artefato estará protegido por seus próprios desafios.”
+        </p>
+        <p>
+            A câmara ficou em silêncio enquanto Sophie absorvia a magnitude da missão que lhe fora dada. Finalmente, ela ergueu o olhar, determinada. “Se isso é o que precisa ser feito, eu farei. Não importa o que custe.”
+        </p>
+        <p>
+            O guardião sorriu levemente, sua expressão suavizando. “Então você deu o primeiro passo, Sophie. Mas lembre-se, o caminho à frente será árduo. Confie em si mesma e em seus aliados, pois só juntos poderão triunfar.”
+        </p>
+        <p>
+            Mais tarde, enquanto o grupo se preparava para partir, Sophie e Lucas conversaram. “Você acha que realmente podemos encontrar esses artefatos?” ela perguntou. Lucas olhou para ela, seus olhos cheios de seriedade. “Se alguém pode fazer isso, é você. Mas não precisa fazer isso sozinha.”
+        </p>
+        <p>
+            Sophie sentiu uma onda de gratidão e algo mais profundo que ela não conseguia nomear. “Obrigada, Lucas.” Ele assentiu, e juntos, caminharam para o próximo capítulo de sua jornada.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo17.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo19.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

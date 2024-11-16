@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 13</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo13">
+        <h1 class="chapter-number">Capítulo 13</h1>
+        <h2 class="chapter-title">O Inimigo Dentro</h2>
+        <p>
+            O grupo estava reunido em torno de uma fogueira improvisada no santuário. A tensão era palpável. Sophie ainda estava processando as visões perturbadoras que havia experimentado, mas sabia que precisava focar no presente. Algo estava errado, e todos podiam sentir.
+        </p>
+        <p>
+            Althea olhou para cada um dos membros reunidos. “Há um traidor entre nós,” ela disse, suas palavras cortando o silêncio como uma lâmina. “Alguém está informando o Conselho sobre nossos movimentos.”
+        </p>
+        <p>
+            Lucas estreitou os olhos, cruzando os braços. “Tem certeza disso? Não pode ser apenas uma coincidência?”
+        </p>
+        <p>
+            Althea balançou a cabeça. “O Conselho não é tolo. Eles têm informações demais, e rápido demais. Alguém aqui está entregando nossas ações.”
+        </p>
+        <p>
+            Sophie sentiu um arrepio. Ela olhou ao redor, tentando imaginar quem poderia ser o traidor. Cada rosto parecia igualmente preocupado e defensivo. Mas havia algo em um dos rebeldes, um homem chamado Darius, que a fazia hesitar. Ele evitava contato visual e parecia desconfortável.
+        </p>
+        <p>
+            “E se for apenas paranoia?” Darius falou, sua voz carregada de nervosismo. “Estamos todos sob pressão. Não precisamos começar a nos acusar.”
+        </p>
+        <p>
+            Althea o encarou com frieza. “A paranoia não nos trará respostas. Mas descobrir quem está nos traindo pode salvar nossas vidas.”
+        </p>
+        <p>
+            Sophie sentiu o colar esquentar novamente. Ela não sabia como, mas parecia reagir a algo — ou a alguém. Ela fechou os olhos, tentando se concentrar na energia do colar. Imagens fragmentadas surgiram em sua mente: Darius entregando um pergaminho para uma figura encapuzada. Ela abriu os olhos de repente, o coração disparado.
+        </p>
+        <p>
+            “É ele,” Sophie disse, apontando para Darius. Todos se viraram para ela, surpresos. “Eu vi... no colar. Ele está passando informações para o Conselho.”
+        </p>
+        <p>
+            Darius deu um passo para trás, levantando as mãos. “Isso é ridículo! Você vai acreditar nela? É só uma garota que nem entende o que está fazendo!”
+        </p>
+        <p>
+            Lucas avançou, colocando-se entre Sophie e Darius. “Cuidado com o que diz,” ele rosnou, seus olhos brilhando com intensidade. “Se ela viu algo, precisamos levar a sério.”
+        </p>
+        <p>
+            Althea ergueu a mão, silenciando a discussão. “Há uma maneira de descobrir a verdade.” Ela estendeu um frasco com um líquido prateado. “Isso revelará suas intenções, Darius. Se estiver dizendo a verdade, não há nada a temer.”
+        </p>
+        <p>
+            Darius hesitou, mas ao perceber que não tinha saída, pegou o frasco e bebeu o conteúdo. Por um momento, nada aconteceu. Mas então, ele gritou, caindo de joelhos. Sua pele parecia queimar, e palavras de traição começaram a sair de sua boca involuntariamente.
+        </p>
+        <p>
+            “Eles me obrigaram!” ele gritou. “Disseram que me matariam se eu não cooperasse. Eu não tive escolha!”
+        </p>
+        <p>
+            Althea o observou com desaprovação. “Sempre há uma escolha. Você colocou todos nós em perigo.” Ela fez um gesto para os outros rebeldes. “Levem-no. Ele enfrentará as consequências de suas ações.”
+        </p>
+        <p>
+            Sophie sentiu um peso sair de seus ombros, mas também sabia que a batalha estava apenas começando. A traição dentro do grupo era apenas um reflexo do que enfrentariam lá fora. E agora, mais do que nunca, ela precisava estar preparada.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo12.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo14.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

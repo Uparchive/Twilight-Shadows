@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 20</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo20">
+        <h1 class="chapter-number">Capítulo 20</h1>
+        <h2 class="chapter-title">A Ponte Entre Dois Mundos</h2>
+        <p>
+            A luz que emanava do altar abriu um caminho na floresta, revelando uma trilha sinuosa que parecia desaparecer no horizonte. Althea liderou o grupo, sua postura tensa, mas decidida. Sophie sentiu o colar pulsar novamente, como se estivesse reagindo à energia do lugar.
+        </p>
+        <p>
+            “Para onde estamos indo agora?” Sophie perguntou enquanto seguia Althea. A líder dos rebeldes olhou por cima do ombro. “Para a ponte entre dois mundos. Lá você entenderá o próximo passo de sua jornada.”
+        </p>
+        <p>
+            O grupo avançou em silêncio, com Lucas sempre ao lado de Sophie. Ele parecia mais alerta do que nunca, seus olhos atentos a cada movimento na floresta. Sophie sabia que ele estava preocupado com outro ataque, mas ela não podia ignorar a curiosidade que crescia dentro dela.
+        </p>
+        <p>
+            Após horas de caminhada, eles chegaram a uma grande abertura no meio da floresta. No centro, uma ponte antiga, feita de pedra e madeira, se estendia sobre um abismo profundo. A ponte parecia brilhar sob a luz da lua, como se tivesse sido feita de algo mais do que materiais comuns.
+        </p>
+        <p>
+            “Esta é a Ponte Entre Dois Mundos,” disse Althea, sua voz reverente. “Ela conecta o nosso mundo ao plano espiritual. Apenas aqueles que possuem um propósito verdadeiro podem atravessá-la.”
+        </p>
+        <p>
+            Sophie sentiu uma onda de ansiedade. “E se eu não conseguir atravessar?” Althea a encarou, seus olhos sérios. “Então você não está pronta para o próximo artefato.”
+        </p>
+        <p>
+            Lucas colocou uma mão no ombro de Sophie. “Você consegue,” ele disse, sua voz suave, mas confiante. “Acredite em si mesma.” Sophie assentiu, respirando fundo antes de dar o primeiro passo na ponte.
+        </p>
+        <p>
+            Assim que ela pisou na ponte, o ambiente ao seu redor mudou. A floresta desapareceu, substituída por um céu estrelado infinito. A ponte parecia flutuar em um vazio brilhante, e cada passo que Sophie dava era acompanhado por um eco suave.
+        </p>
+        <p>
+            De repente, figuras começaram a surgir ao longo da ponte. Eram sombras, cada uma parecendo representar alguém ou algo do passado de Sophie. Ela reconheceu algumas — seu pai, sua melhor amiga, até mesmo ela mesma em um momento de fraqueza. As sombras a observavam, sussurrando palavras que Sophie não conseguia entender.
+        </p>
+        <p>
+            “Você não é forte o suficiente,” uma das sombras disse, sua voz ecoando pela ponte. Sophie parou, sentindo o peso das palavras. Mas então, o colar começou a brilhar intensamente, e ela lembrou-se das palavras de Lucas e Althea. “Eu sou mais forte do que vocês pensam,” ela disse, sua voz firme. “E não vou desistir.”
+        </p>
+        <p>
+            Com isso, as sombras desapareceram, e Sophie continuou caminhando até o outro lado da ponte. Quando chegou ao final, uma luz dourada envolveu seu corpo, e ela sentiu uma onda de energia passar por ela.
+        </p>
+        <p>
+            Althea e Lucas a esperavam do outro lado. “Você conseguiu,” Althea disse, sua expressão contendo uma mistura de orgulho e alívio. “Agora você está um passo mais perto de cumprir seu destino.”
+        </p>
+        <p>
+            Sophie olhou para a ponte atrás de si, sabendo que havia deixado algo para trás — o medo, as dúvidas. Ela estava pronta para o que viesse a seguir.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo19.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

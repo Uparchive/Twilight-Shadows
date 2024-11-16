@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 19</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "twilightshadows";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="twilightshadows">
+    <div class="container capitulo" id="capitulo19">
+        <h1 class="chapter-number">Capítulo 19</h1>
+        <h2 class="chapter-title">Sussurros na Escuridão</h2>
+        <p>
+            A noite caiu enquanto o grupo avançava pela floresta em direção à sua próxima missão. O silêncio era interrompido apenas pelo som das folhas sob seus pés e pelo ocasional sussurro do vento entre as árvores.
+        </p>
+        <p>
+            Sophie não conseguia ignorar a sensação de que estavam sendo observados. O colar em seu pescoço parecia mais pesado, como se tentasse avisá-la de um perigo iminente. Ela trocou um olhar rápido com Lucas, que percebeu sua inquietação e assentiu levemente, indicando que também estava em alerta.
+        </p>
+        <p>
+            “Estamos próximos,” disse Althea, parando diante de uma clareira. No centro, havia um antigo altar de pedra coberto de musgo, com runas que brilhavam fracamente na escuridão. “Este é o primeiro marco no caminho para os artefatos.”
+        </p>
+        <p>
+            Sophie se aproximou, sentindo uma estranha energia emanando do altar. “O que precisamos fazer aqui?” ela perguntou, sua voz quase um sussurro. Althea apontou para as runas. “Elas devem ser ativadas. Mas cuidado, pois isso pode atrair atenção indesejada.”
+        </p>
+        <p>
+            Antes que pudesse questionar mais, uma sombra se moveu na periferia da clareira. Sophie congelou, segurando o colar instintivamente. Lucas já estava em posição defensiva, seus olhos brilhando na penumbra.
+        </p>
+        <p>
+            “Eles estão aqui,” Lucas disse, sua voz baixa, mas carregada de urgência. Althea começou a murmurar um feitiço, as runas no altar brilhando mais intensamente. “Mantenham-nos afastados enquanto termino,” ela ordenou.
+        </p>
+        <p>
+            Criaturas saíram das sombras, seus olhos vermelhos e famintos fixos no grupo. Sophie sentiu o medo ameaçar dominá-la, mas respirou fundo e deixou o colar guiar sua energia. Uma barreira de luz se formou ao seu redor, afastando os primeiros atacantes.
+        </p>
+        <p>
+            Lucas lutava ao seu lado, seus movimentos rápidos e precisos. Ele parecia uma sombra viva, enfrentando os inimigos com uma ferocidade impressionante. Sophie usou a energia do colar para lançar feixes de luz, que atingiam as criaturas como lâminas.
+        </p>
+        <p>
+            Finalmente, o altar emitiu uma explosão de luz, dispersando os atacantes restantes. Althea levantou-se, ofegante, mas triunfante. “Conseguimos,” ela disse, olhando para Sophie. “O caminho está aberto.”
+        </p>
+        <p>
+            O grupo recuperou o fôlego enquanto a clareira se enchia de uma luz suave e reconfortante. Mas Sophie sabia que aquilo era apenas o começo. Os sussurros na escuridão não haviam desaparecido completamente, e ela sentia que algo ainda os observava, esperando o momento certo para atacar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo18.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo20.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
